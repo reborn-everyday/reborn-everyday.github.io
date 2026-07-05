@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yeonjung Hong</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --card: #ffffff;
+      --accent: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1.05;
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      margin-top: 64px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 8px 0 8px;
+      font-size: 22px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      color: #374151;
+      margin: 0 0 24px;
+      font-weight: 500;
+    }
+
+    .tagline {
+      font-size: 20px;
+      max-width: 760px;
+      color: #374151;
+      margin-bottom: 28px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0 48px;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 10px 16px;
+      color: var(--text);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .links a.primary {
+      background: var(--text);
+      color: white;
+      border-color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .project {
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .project p:last-child {
+      margin-bottom: 0;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    footer {
+      margin-top: 72px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        padding-top: 48px;
+      }
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Personal Portfolio</p>
+    <h1>Yeonjung Hong</h1>
+    <p class="subtitle">AI Product Manager · Technical Program Manager</p>
+
+    <p class="tagline">
+      I build enterprise AI systems at the intersection of product, research,
+      infrastructure, and domain expertise — with a focus on LLM platforms,
+      evaluation pipelines, and on-premise AI deployment.
+    </p>
+
+    <div class="links">
+      <a class="primary" href="#projects">View Projects</a>
+      <a href="https://github.com/reborn-everyday">GitHub</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <section class="two-column">
+      <div>
+        <h2>Focus</h2>
+        <p>
+          My work focuses on turning AI research capabilities into usable systems
+          for real organizations. I bridge product strategy, engineering execution,
+          infrastructure constraints, and domain expert workflows.
+        </p>
+      </div>
+      <div>
+        <h2>Keywords</h2>
+        <ul>
+          <li>Enterprise AI Platform</li>
+          <li>LLM Evaluation</li>
+          <li>On-premise Deployment</li>
+          <li>Dataset Generation</li>
+          <li>AI Product Strategy</li>
+        </ul>
+      </div>
+    </section>
+
+    <h2 id="projects">Featured Projects</h2>
+
+    <div class="grid">
+      <section class="project">
+        <p class="meta">Enterprise AI Platform · Product Management · LLM</p>
+        <h3>Data Foundry</h3>
+        <p>
+          Led product and program coordination for an enterprise LLM platform
+          supporting document-based dataset generation, model training, and
+          evaluation workflows.
+        </p>
+      </section>
+
+      <section class="project">
+        <p class="meta">Government AI · On-premise Deployment · Evaluation</p>
+        <h3>MFDS AI Review Platform</h3>
+        <p>
+          Managed the launch and execution of an on-premise AI project for
+          regulatory document review, coordinating product, research, engineering,
+          infrastructure, and client stakeholders.
+        </p>
+      </section>
+
+      <section class="project">
+        <p class="meta">LLM Evaluation · Benchmarking · Domain AI</p>
+        <h3>Enterprise LLM Evaluation</h3>
+        <p>
+          Designed and coordinated evaluation workflows for domain-specific LLMs,
+          including benchmark evaluation, task-specific assessment, and qualitative
+          review with domain experts.
+        </p>
+      </section>
+
+      <section class="project">
+        <p class="meta">Wellness · Community · Internal Product</p>
+        <h3>Workplace Yoga & Wellness Community</h3>
+        <p>
+          Built and operated an internal wellness community, combining yoga
+          instruction, community operations, lightweight product thinking, and
+          participation workflows.
+        </p>
+      </section>
+    </div>
+
+    <h2>Writing Ideas</h2>
+    <ul>
+      <li>What makes enterprise AI different from ChatGPT</li>
+      <li>Lessons from on-premise LLM deployment</li>
+      <li>How to evaluate domain-specific LLMs</li>
+      <li>Building wellness programs inside organizations</li>
+    </ul>
+
+    <h2 id="resume">Resume</h2>
+    <p>
+      Resume page coming soon. This site will evolve into a publishable portfolio
+      with project case studies, writing, and a downloadable resume.
+    </p>
+
+    <h2 id="contact">Contact</h2>
+    <p>
+      Find me on <a href="https://github.com/reborn-everyday">GitHub</a>.
+    </p>
+
+    <footer>
+      © 2026 Yeonjung Hong. Built with GitHub Pages.
+    </footer>
+  </main>
+</body>
+</html>
