@@ -93,8 +93,15 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
     </div>
     <div class="video-grid">
       <div class="video-card">
-        <div class="video-frame"><span class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg></span></div>
-        <p class="video-cap">// drop-in: short film, full cut</p>
+        <div class="video-frame" style="background:none;">
+          <iframe
+            src="https://www.youtube.com/embed/5rmIwabtJHA"
+            title="Short film, full cut"
+            style="width:100%;height:100%;border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <p class="video-cap">Short film, full cut</p>
       </div>
       <div class="stills-grid">
         <figure class="washed"><image-slot id="art-still-1" shape="rect" placeholder="Drop a still"></image-slot></figure>
