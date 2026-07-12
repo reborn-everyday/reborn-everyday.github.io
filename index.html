@@ -3,71 +3,43 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Yeonjung Hong — AI Product Manager &amp; Yoga Teacher</title>
+<title>Yeonjung Hong — AI Product Manager &amp; Wellness Architect</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-/* Template scaffolding — page layout and web-scale sizing only; every color,
-   font, radius and shadow comes from ../../styles.css. */
 :root { --leading: 28px; --half: 14px; --edge: clamp(20px, 5vw, 72px); --measure: 60ch; }
 body { margin: 0; text-wrap: pretty; }
 .wrap { max-width: 1100px; margin: 0 auto; padding: 0 var(--edge); }
 .nav { padding-inline: max(var(--edge), calc((100% - 1100px) / 2 + var(--edge))); flex-wrap: wrap; }
 .nav a { white-space: nowrap; }
 @media (max-width: 620px) { .nav .btn { display: none; } }
-
-.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em;
-  text-transform: uppercase; font-weight: 600; color: var(--color-accent-700);
-  margin: 0 0 calc(var(--leading) - var(--half)); }
-
-/* — hero — */
+.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-700); margin: 0 0 calc(var(--leading) - var(--half)); }
 .hero { position: relative; padding: calc(3 * var(--leading)) 0 calc(2 * var(--leading)); }
-.hero::before {
-  content: ""; position: absolute; right: -160px; top: -180px;
-  width: 380px; height: 380px; border-radius: 50%;
-  background: var(--color-accent-2-200); pointer-events: none; z-index: -1;
-}
+.hero::before { content: ""; position: absolute; right: -160px; top: -180px; width: 380px; height: 380px; border-radius: 50%; background: var(--color-accent-2-200); pointer-events: none; z-index: -1; }
 @media (max-width: 1320px) { .hero::before { right: 0; } }
-.display {
-  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: clamp(38px, 5.4vw, 66px);
-  line-height: clamp(41px, 5.9vw, 72px);
-  margin: 0; margin-left: -0.028em;
-}
+.display { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(38px, 5.4vw, 66px); line-height: clamp(41px, 5.9vw, 72px); margin: 0; margin-left: -0.028em; }
 .display .line { display: block; }
-.hero .sub { font-size: 17px; line-height: var(--leading); max-width: var(--measure);
-  margin: calc(1.5 * var(--leading)) 0 0; opacity: 0.85; }
-
-/* — two-path cards — */
-.paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--leading);
-  padding: calc(1.5 * var(--leading)) 0 calc(2.5 * var(--leading)); }
+.hero .sub { font-size: 17px; line-height: var(--leading); max-width: var(--measure); margin: calc(1.5 * var(--leading)) 0 0; opacity: 0.85; }
+.paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--leading); padding: calc(1.5 * var(--leading)) 0 calc(2.5 * var(--leading)); }
 @media (max-width: 980px) { .paths { grid-template-columns: 1fr; } }
-.path-card { display: block; text-decoration: none; color: inherit; border-radius: calc(2 * var(--radius-lg));
-  padding: calc(1.75 * var(--leading)) clamp(22px, 3vw, 40px); transition: transform 0.15s ease; }
+.path-card { display: block; text-decoration: none; color: inherit; border-radius: calc(2 * var(--radius-lg)); padding: calc(1.75 * var(--leading)) clamp(22px, 3vw, 40px); transition: transform 0.15s ease; }
 .path-card:hover { transform: translateY(-2px); }
 .path-card.ai { background: var(--color-accent-100); }
-.path-card.yoga { background: var(--color-accent-2-100); }
+.path-card.wellness { background: var(--color-accent-2-100); }
 .path-card.art { background: var(--color-neutral-200); }
 .path-card .p-kicker { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; opacity: 0.7; }
 .path-card.ai .p-kicker { color: var(--color-accent-800); }
-.path-card.yoga .p-kicker { color: var(--color-accent-2-800); }
+.path-card.wellness .p-kicker { color: var(--color-accent-2-800); }
 .path-card.art .p-kicker { color: var(--color-neutral-800); }
-.path-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: 26px; margin: var(--half) 0 10px; }
+.path-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 26px; margin: var(--half) 0 10px; }
 .path-card p { font-size: 15px; line-height: var(--leading); margin: 0; opacity: 0.85; max-width: 42ch; }
-.path-card .go { display: inline-flex; align-items: center; gap: 6px; margin-top: var(--leading);
-  font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 14px; }
+.path-card .go { display: inline-flex; align-items: center; gap: 6px; margin-top: var(--leading); font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 14px; }
 .path-card.ai .go { color: var(--color-accent-700); }
-.path-card.yoga .go { color: var(--color-accent-2-700); }
+.path-card.wellness .go { color: var(--color-accent-2-700); }
 .path-card.art .go { color: var(--color-neutral-800); }
-
-/* — contact close — */
 .close { padding: 0 0 calc(2.5 * var(--leading)); }
-.close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-surface);
-  padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap;
-  gap: var(--leading); align-items: center; justify-content: space-between; }
+.close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-surface); padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: var(--leading); align-items: center; justify-content: space-between; }
 .close-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 25px; margin: 0 0 6px; }
 .close-card p { font-size: 14px; margin: 0; opacity: 0.75; max-width: 46ch; }
-
 footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-size: 13px; opacity: 0.65; }
 </style>
 </head>
@@ -76,35 +48,34 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
   <span class="nav-brand">Yeonjung Hong</span>
   <a href="index.html" aria-current="page">Home</a>
   <a href="ai-career.html">AI</a>
-  <a href="yoga.html">Yoga</a>
+  <a href="yoga.html">Wellness</a>
   <a href="art.html">Art</a>
   <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
 </nav>
 <div class="wrap">
-
   <section class="hero">
-    <span class="kicker">Three sides, one person</span>
-    <h1 class="display"><span class="line">Product-minded AI operator.</span> <span class="line">Yoga teacher &amp; wellness architect.</span></h1>
-    <p class="sub">By day, I build enterprise AI systems — from research capability to real-world deployment. Alongside that, I teach yoga and lead a workplace wellness community, training toward a career where technology and wellbeing aren't separate tracks.</p>
+    <span class="kicker">Technology, embodiment, and everyday life</span>
+    <h1 class="display"><span class="line">I design practical ways</span><span class="line">for people to work, recover, and live better.</span></h1>
+    <p class="sub">I work as an AI product manager, teach yoga, and run small workplace wellness experiments. My long-term practice is becoming a wellness architect: someone who designs systems, spaces, and habits that help people recover and thrive.</p>
   </section>
 
   <section class="paths">
     <a class="path-card ai" href="ai-career.html">
-      <span class="p-kicker">Day job</span>
+      <span class="p-kicker">Product practice</span>
       <h2>AI Product &amp; Program Management</h2>
-      <p>Enterprise LLM platforms, evaluation pipelines, dataset generation, and on-premise AI deployment at LG AI Research.</p>
+      <p>Enterprise LLM platforms, evaluation pipelines, dataset generation, and on-premise AI deployment.</p>
       <span class="go">See the work →</span>
     </a>
-    <a class="path-card yoga" href="yoga.html">
-      <span class="p-kicker">Second discipline</span>
-      <h2>Yoga &amp; Wellness Teaching</h2>
-      <p>Certified yoga instructor leading 2-3 workplace classes a week since 2024 — recordings, photos, and where to follow along.</p>
+    <a class="path-card wellness" href="yoga.html">
+      <span class="p-kicker">Field practice</span>
+      <h2>Wellness Architecture</h2>
+      <p>Yoga teaching, mindfulness, workplace wellness, and small experiments in how people recover, connect, and build sustainable habits.</p>
       <span class="go">See the practice →</span>
     </a>
     <a class="path-card art" href="art.html">
-      <span class="p-kicker">Third voice</span>
+      <span class="p-kicker">Creative practice</span>
       <h2>Acting, Film &amp; Books</h2>
-      <p>A short film I co-created and starred in, a running book club since 2021, and notes on what I've been watching and reading.</p>
+      <p>A short film I co-created and starred in, a running book club, and notes on what I have been watching and reading.</p>
       <span class="go">See the notebook →</span>
     </a>
   </section>
@@ -112,8 +83,8 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
   <section class="close" id="contact">
     <div class="close-card">
       <div>
-        <h2>Let's talk</h2>
-        <p>Reach me on GitHub for now — more links are coming as the site fills in.</p>
+        <h2>Building a practice across disciplines</h2>
+        <p>AI is how I build systems. Yoga is how I study the body. Wellness architecture is where those practices begin to meet.</p>
       </div>
       <a class="btn btn-primary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
     </div>
