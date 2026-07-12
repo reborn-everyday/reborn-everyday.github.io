@@ -12,46 +12,28 @@ body { margin: 0; text-wrap: pretty; }
 .nav { padding-inline: max(var(--edge), calc((100% - 1100px) / 2 + var(--edge))); flex-wrap: wrap; }
 .nav a { white-space: nowrap; }
 @media (max-width: 620px) { .nav .btn { display: none; } }
-
-.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em;
-  text-transform: uppercase; font-weight: 600; color: var(--color-accent-700);
-  margin: 0 0 calc(var(--leading) - var(--half)); }
-
+.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-700); margin: 0 0 calc(var(--leading) - var(--half)); }
 .page-head { padding: calc(2.5 * var(--leading)) 0 var(--leading); }
-.page-head h1 { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: clamp(32px, 4vw, 46px); margin: 0; margin-left: -0.028em; }
-.page-head .sub { font-size: 16px; line-height: var(--leading); max-width: var(--measure);
-  margin: var(--half) 0 0; opacity: 0.85; }
-
+.page-head h1 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(32px, 4vw, 46px); margin: 0; margin-left: -0.028em; }
+.page-head .sub { font-size: 16px; line-height: var(--leading); max-width: var(--measure); margin: var(--half) 0 0; opacity: 0.85; }
 .tags-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--leading); }
 .section { padding: var(--leading) 0 calc(2 * var(--leading)); }
-
 .timeline { padding: 0 0 calc(1.5 * var(--leading)); }
-.t-item { position: relative; display: grid; grid-template-columns: 150px minmax(0, 1fr);
-  gap: var(--leading) clamp(24px, 4vw, 56px); padding: calc(1.2 * var(--leading)) 0;
-  border-bottom: 1px solid var(--color-divider); }
+.t-item { position: relative; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: var(--leading) clamp(24px, 4vw, 56px); padding: calc(1.2 * var(--leading)) 0; border-bottom: 1px solid var(--color-divider); }
 .t-item:last-child { border-bottom: none; }
-.t-year { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: 15px; color: var(--color-accent-700); padding-top: 3px; }
-.t-title { position: relative; font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: 21px; line-height: 1.3; margin: 0 0 8px; }
-.t-title::before { content: ""; position: absolute; left: -34px; top: 8px;
-  width: 14px; height: 14px; border-radius: 50%; background: var(--color-accent); }
+.t-year { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 15px; color: var(--color-accent-700); padding-top: 3px; }
+.t-title { position: relative; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 21px; line-height: 1.3; margin: 0 0 8px; }
+.t-title::before { content: ""; position: absolute; left: -34px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--color-accent); }
 @media (max-width: 1160px) { .t-title::before { display: none; } }
 .t-copy { font-size: 15px; line-height: var(--leading); margin: 0; opacity: 0.82; max-width: 62ch; }
 .t-copy strong { color: var(--color-text); }
 @media (max-width: 640px) { .t-item { grid-template-columns: 1fr; gap: var(--half); } }
-
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--leading); }
 @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
 .card .card-title { font-size: 20px; }
-
-.close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-surface);
-  padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap;
-  gap: var(--leading); align-items: center; justify-content: space-between; }
+.close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-surface); padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: var(--leading); align-items: center; justify-content: space-between; }
 .close-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 22px; margin: 0 0 6px; }
 .close-card p { font-size: 14px; margin: 0; opacity: 0.75; max-width: 46ch; }
-
 footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-size: 13px; opacity: 0.65; }
 </style>
 </head>
@@ -60,90 +42,36 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
   <span class="nav-brand">Yeonjung Hong</span>
   <a href="index.html">Home</a>
   <a href="ai-career.html" aria-current="page">AI</a>
-  <a href="yoga.html">Yoga</a>
+  <a href="yoga.html">Wellness</a>
   <a href="art.html">Art</a>
   <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
 </nav>
 <div class="wrap">
-
-  <section class="page-head">
-    <span class="kicker">AI Product &amp; Program Management</span>
-    <h1>Building enterprise AI</h1>
-    <p class="sub">I'm an AI product and program manager with a background in speech science, NLP, AI data management, and enterprise AI product development. My strength is translating ambiguous research capabilities into usable systems, operating plans, and outcomes people can act on.</p>
-    <div class="tags-row">
-      <span class="tag tag-accent">Enterprise AI</span>
-      <span class="tag tag-neutral">LLM Evaluation</span>
-      <span class="tag tag-neutral">On-prem Deployment</span>
-      <span class="tag tag-neutral">AI Product Strategy</span>
-      <span class="tag tag-neutral">Dataset Generation</span>
-    </div>
-  </section>
-
-  <section class="section">
-    <span class="kicker">Experience</span>
-    <div class="timeline">
-      <div class="t-item">
-        <span class="t-year">2023 — Present</span>
-        <div>
-          <h3 class="t-title">LG AI Research · AI Project / Product Manager</h3>
-          <p class="t-copy">Product and program work across enterprise AI platforms, LLM data generation, model evaluation, on-premise deployment, and government AI projects.</p>
-        </div>
-      </div>
-      <div class="t-item">
-        <span class="t-year">2019 — 2023</span>
-        <div>
-          <h3 class="t-title">MediaZen · AI PM / Speech &amp; NLP Engineer</h3>
-          <p class="t-copy">Worked across speech/NLP engineering and AI project management, building a foundation in language technology, data, and client-facing execution. Built <strong>SpeechPro</strong>, a speech-recognition-based English pronunciation assessment system, deployed as a production service for a real edtech company.</p>
-        </div>
-      </div>
-      <div class="t-item">
-        <span class="t-year">Academic</span>
-        <div>
-          <h3 class="t-title">Speech Science &amp; English Phonetics</h3>
-          <p class="t-copy">Ph.D. and M.A. training in speech science and phonetics; B.A. in English Language and Literature.</p>
-        </div>
-      </div>
-    </div>
-    <div class="tags-row">
-      <span class="tag tag-neutral">Google Project Management Certificate</span>
-    </div>
-  </section>
-
-  <section class="section">
-    <span class="kicker">Featured Projects</span>
-    <div class="grid">
-      <article class="card elev-sm">
-        <span class="card-kicker">Enterprise AI · LLM · Product</span>
-        <h2 class="card-title">Data Foundry</h2>
-        <p class="card-body">Coordinated product and program execution for an enterprise LLM platform supporting document-based dataset generation, model training, and evaluation workflows.</p>
-        <span class="card-meta">LG AI Research</span>
-      </article>
-      <article class="card elev-sm">
-        <span class="card-kicker">Government AI · On-premise · Stakeholder Management</span>
-        <h2 class="card-title">MFDS AI Review Platform</h2>
-        <p class="card-body">Managed launch and execution of an on-premise AI project for regulatory document review, aligning product, research, engineering, infrastructure, and client stakeholders.</p>
-        <span class="card-meta">LG AI Research</span>
-      </article>
-      <article class="card elev-sm">
-        <span class="card-kicker">Evaluation · Benchmarking · Domain AI</span>
-        <h2 class="card-title">Enterprise LLM Evaluation</h2>
-        <p class="card-body">Designed and coordinated evaluation workflows for domain-specific LLMs, including benchmark evaluation, task-specific assessment, and domain expert review.</p>
-        <span class="card-meta">LG AI Research</span>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="close-card">
-      <div>
-        <h2>Downloadable resume</h2>
-        <p>A polished resume and case studies are on their way. For now, GitHub is the best place to see recent work.</p>
-      </div>
-      <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </section>
-
-  <footer>© 2026 Yeonjung Hong. Built with the Organic system.</footer>
+<section class="page-head">
+  <span class="kicker">AI Product &amp; Program Management</span>
+  <h1>Building enterprise AI</h1>
+  <p class="sub">I'm an AI product and program manager with a background in speech science, NLP, AI data management, and enterprise AI product development. My strength is translating ambiguous research capabilities into usable systems, operating plans, and outcomes people can act on.</p>
+  <div class="tags-row"><span class="tag tag-accent">Enterprise AI</span><span class="tag tag-neutral">LLM Evaluation</span><span class="tag tag-neutral">On-prem Deployment</span><span class="tag tag-neutral">AI Product Strategy</span><span class="tag tag-neutral">Dataset Generation</span></div>
+</section>
+<section class="section">
+  <span class="kicker">Experience</span>
+  <div class="timeline">
+    <div class="t-item"><span class="t-year">2023 — Present</span><div><h3 class="t-title">LG AI Research · AI Project / Product Manager</h3><p class="t-copy">Product and program work across enterprise AI platforms, LLM data generation, model evaluation, on-premise deployment, and government AI projects.</p></div></div>
+    <div class="t-item"><span class="t-year">2019 — 2023</span><div><h3 class="t-title">MediaZen · AI PM / Speech &amp; NLP Engineer</h3><p class="t-copy">Worked across speech/NLP engineering and AI project management, building a foundation in language technology, data, and client-facing execution. Built <strong>SpeechPro</strong>, a speech-recognition-based English pronunciation assessment system, deployed as a production service for a real edtech company.</p></div></div>
+    <div class="t-item"><span class="t-year">Academic</span><div><h3 class="t-title">Speech Science &amp; English Phonetics</h3><p class="t-copy">Ph.D. and M.A. training in speech science and phonetics; B.A. in English Language and Literature.</p></div></div>
+  </div>
+  <div class="tags-row"><span class="tag tag-neutral">Google Project Management Certificate</span></div>
+</section>
+<section class="section">
+  <span class="kicker">Featured Projects</span>
+  <div class="grid">
+    <article class="card elev-sm"><span class="card-kicker">Enterprise AI · LLM · Product</span><h2 class="card-title">Data Foundry</h2><p class="card-body">Coordinated product and program execution for an enterprise LLM platform supporting document-based dataset generation, model training, and evaluation workflows.</p><span class="card-meta">LG AI Research</span></article>
+    <article class="card elev-sm"><span class="card-kicker">Government AI · On-premise · Stakeholder Management</span><h2 class="card-title">MFDS AI Review Platform</h2><p class="card-body">Managed launch and execution of an on-premise AI project for regulatory document review, aligning product, research, engineering, infrastructure, and client stakeholders.</p><span class="card-meta">LG AI Research</span></article>
+    <article class="card elev-sm"><span class="card-kicker">Evaluation · Benchmarking · Domain AI</span><h2 class="card-title">Enterprise LLM Evaluation</h2><p class="card-body">Designed and coordinated evaluation workflows for domain-specific LLMs, including benchmark evaluation, task-specific assessment, and domain expert review.</p><span class="card-meta">LG AI Research</span></article>
+  </div>
+</section>
+<section class="section"><div class="close-card"><div><h2>Product work, grounded in human systems</h2><p>I am interested in how technical systems and human systems shape one another — a perspective that also informs my work in wellness.</p></div><a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a></div></section>
+<footer>© 2026 Yeonjung Hong. Built with the Organic system.</footer>
 </div>
 </body>
 </html>
