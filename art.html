@@ -12,57 +12,24 @@ body { margin: 0; text-wrap: pretty; }
 .nav { padding-inline: max(var(--edge), calc((100% - 1100px) / 2 + var(--edge))); flex-wrap: wrap; }
 .nav a { white-space: nowrap; }
 @media (max-width: 620px) { .nav .btn { display: none; } }
-
-.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em;
-  text-transform: uppercase; font-weight: 600; color: var(--color-neutral-700);
-  margin: 0 0 calc(var(--leading) - var(--half)); }
-
+.kicker { display:block; font-size:13px; line-height:var(--half); letter-spacing:.06em; text-transform:uppercase; font-weight:600; color:var(--color-neutral-700); margin:0 0 calc(var(--leading) - var(--half)); }
 .page-head { padding: calc(2.5 * var(--leading)) 0 var(--leading); }
-.page-head h1 { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: clamp(32px, 4vw, 46px); margin: 0; margin-left: -0.028em; }
-.page-head .sub { font-size: 16px; line-height: var(--leading); max-width: var(--measure);
-  margin: var(--half) 0 0; opacity: 0.85; }
-.tags-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--leading); }
-
-.section { padding: var(--leading) 0 calc(2 * var(--leading)); }
-.section-head { margin-bottom: var(--half); }
-.section-head h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: 24px; margin: 0 0 6px; }
-.section-head p { font-size: 15px; margin: 0; opacity: 0.75; max-width: 58ch; }
-
-/* — video / stills (the short film) — */
-.video-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--leading);
-  margin-top: var(--leading); align-items: start; }
-@media (max-width: 780px) { .video-grid { grid-template-columns: 1fr; } }
-.video-card { border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); }
-.video-frame {
-  aspect-ratio: 16 / 9; position: relative; display: flex; align-items: center; justify-content: center;
-  background: repeating-linear-gradient(135deg,
-    var(--color-neutral-200) 0 14px, var(--color-neutral-300) 14px 28px);
-}
-.play-btn { width: 56px; height: 56px; border-radius: 50%; background: var(--color-bg);
-  box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; }
-.play-btn svg { color: var(--color-neutral-800); margin-left: 3px; }
-.video-cap { padding: var(--space-3); font-size: 13px; font-family: ui-monospace, 'SF Mono', Menlo, monospace;
-  color: color-mix(in srgb, var(--color-text) 60%, transparent); }
-.stills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
-.stills-grid figure { margin: 0; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 3 / 4; }
-
-/* — notebook (film & book notes) — */
-.notebook-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--leading);
-  margin-top: var(--leading); }
-@media (max-width: 780px) { .notebook-grid { grid-template-columns: 1fr; } }
-.note-card { min-height: 160px; }
-.note-card .card-title { font-size: 18px; }
-.note-card .card-body { font-style: italic; }
-
-.close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-surface);
-  padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap;
-  gap: var(--leading); align-items: center; justify-content: space-between; }
-.close-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 22px; margin: 0 0 6px; }
-.close-card p { font-size: 14px; margin: 0; opacity: 0.75; max-width: 46ch; }
-
-footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-size: 13px; opacity: 0.65; }
+.page-head h1 { font-family:var(--font-heading); font-weight:var(--font-heading-weight); font-size:clamp(32px,4vw,46px); margin:0; margin-left:-.028em; }
+.page-head .sub { font-size:16px; line-height:var(--leading); max-width:var(--measure); margin:var(--half) 0 0; opacity:.85; }
+.tags-row { display:flex; flex-wrap:wrap; gap:var(--space-2); margin-top:var(--leading); }
+.section { padding:var(--leading) 0 calc(2 * var(--leading)); }
+.section-head { margin-bottom:var(--leading); }
+.section-head h2 { font-family:var(--font-heading); font-weight:var(--font-heading-weight); font-size:24px; margin:0 0 6px; }
+.section-head p { font-size:15px; margin:0; opacity:.75; max-width:58ch; }
+.video-card { max-width:760px; border-radius:var(--radius-lg); overflow:hidden; background:var(--color-surface); }
+.video-frame { aspect-ratio:16/9; }
+.video-cap { padding:var(--space-3); font-size:13px; font-family:ui-monospace,'SF Mono',Menlo,monospace; color:color-mix(in srgb,var(--color-text) 60%,transparent); }
+.grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--leading); }
+@media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+.close-card { border-radius:calc(2 * var(--radius-lg)); background:var(--color-surface); padding:calc(1.75 * var(--leading)) clamp(24px,4vw,56px); display:flex; flex-wrap:wrap; gap:var(--leading); align-items:center; justify-content:space-between; }
+.close-card h2 { font-family:var(--font-heading); font-weight:var(--font-heading-weight); font-size:22px; margin:0 0 6px; }
+.close-card p { font-size:14px; margin:0; opacity:.75; max-width:46ch; }
+footer { padding:calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-size:13px; opacity:.65; }
 </style>
 </head>
 <body>
@@ -70,85 +37,30 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
   <span class="nav-brand">Yeonjung Hong</span>
   <a href="index.html">Home</a>
   <a href="ai-career.html">AI</a>
-  <a href="yoga.html">Yoga</a>
+  <a href="yoga.html">Wellness</a>
   <a href="art.html" aria-current="page">Art</a>
   <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
 </nav>
 <div class="wrap">
-
-  <section class="page-head">
-    <span class="kicker">Off the clock and off the mat</span>
-    <h1>Acting, watching, reading</h1>
-    <p class="sub">A short film I co-created and starred in, a book club I've run since 2021, and a running notebook of what stays with me from film and fiction — the third voice, alongside the roadmap and the practice.</p>
-    <div class="tags-row">
-      <span class="tag tag-neutral">Short Film Creator &amp; Actor</span>
-      <span class="tag tag-neutral">Monthly Book Club Organizer · since 2021</span>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-head">
-      <h2>The short film</h2>
-      <p>Co-created and starred in a 10-minute short film in summer 2025.</p>
-    </div>
-    <div class="video-grid">
-      <div class="video-card">
-        <div class="video-frame" style="background:none;">
-          <iframe
-            src="https://www.youtube.com/embed/5rmIwabtJHA"
-            title="Short film, full cut"
-            style="width:100%;height:100%;border:0;"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <p class="video-cap">Short film, full cut</p>
-      </div>
-      <div class="stills-grid">
-        <figure class="washed"><image-slot id="art-still-1" shape="rect" placeholder="Drop a still"></image-slot></figure>
-        <figure class="washed"><image-slot id="art-still-2" shape="rect" placeholder="Drop a still"></image-slot></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-head">
-      <h2>Notebook</h2>
-      <p>Short reflections on films and books, added as they come — replace these with your own.</p>
-    </div>
-    <div class="notebook-grid">
-      <article class="card note-card elev-sm">
-        <span class="card-kicker">Film</span>
-        <h3 class="card-title">Title placeholder</h3>
-        <p class="card-body">“A line or two on what it left you thinking about.”</p>
-        <span class="card-meta">Watched — month, year</span>
-      </article>
-      <article class="card note-card elev-sm">
-        <span class="card-kicker">Book</span>
-        <h3 class="card-title">Title placeholder</h3>
-        <p class="card-body">“A line or two on what it left you thinking about.”</p>
-        <span class="card-meta">Read — month, year</span>
-      </article>
-      <article class="card note-card elev-sm">
-        <span class="card-kicker">Book club pick</span>
-        <h3 class="card-title">Title placeholder</h3>
-        <p class="card-body">“What the group made of it.”</p>
-        <span class="card-meta">Discussed — month, year</span>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="close-card">
-      <div>
-        <h2>More entries soon</h2>
-        <p>This notebook grows as the reading and watching does — check back, or ask what I've been into lately.</p>
-      </div>
-      <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </section>
-
-  <footer>© 2026 Yeonjung Hong. Built with the Organic system.</footer>
+<section class="page-head">
+  <span class="kicker">Creative Practice</span>
+  <h1>Acting, watching, reading</h1>
+  <p class="sub">A short film I co-created and starred in, a book club I have run since 2021, and a continuing practice of paying attention to stories, bodies, and human behavior.</p>
+  <div class="tags-row"><span class="tag tag-neutral">Short Film Creator &amp; Actor</span><span class="tag tag-neutral">Monthly Book Club Organizer · since 2021</span></div>
+</section>
+<section class="section">
+  <div class="section-head"><span class="kicker">Selected Work</span><h2>The short film</h2><p>Co-created and starred in a 10-minute short film in summer 2025.</p></div>
+  <div class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/5rmIwabtJHA" title="Short film, full cut" style="width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="video-cap">Short film, full cut</p></div>
+</section>
+<section class="section">
+  <div class="section-head"><span class="kicker">Ongoing Practice</span><h2>Stories as another way of studying people</h2></div>
+  <div class="grid">
+    <article class="card elev-sm"><span class="card-kicker">Book Club</span><h3 class="card-title">Reading in community</h3><p class="card-body">Since 2021, I have organized a recurring book club built around shared interpretation, reflection, and conversation.</p></article>
+    <article class="card elev-sm"><span class="card-kicker">Film &amp; Performance</span><h3 class="card-title">Attention to human behavior</h3><p class="card-body">Acting and film sharpen how I notice emotion, timing, tension, and the gap between what people say and what they experience.</p></article>
+  </div>
+</section>
+<section class="section"><div class="close-card"><div><h2>Creative work belongs in the same system</h2><p>Product, wellness, and art all begin with observing people closely and designing experiences that move them.</p></div><a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a></div></section>
+<footer>© 2026 Yeonjung Hong. Built with the Organic system.</footer>
 </div>
-<script src="./image-slot.js"></script>
 </body>
 </html>
