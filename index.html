@@ -1,331 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yeonjung Hong | AI Product & Technical Program Manager</title>
-  <style>
-    :root {
-      --bg: #f7f7f3;
-      --surface: #ffffff;
-      --text: #15171a;
-      --muted: #626b78;
-      --line: #e6e2d9;
-      --accent: #2563eb;
-      --accent-soft: #e8efff;
-      --dark: #111827;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yeonjung Hong — AI Product Manager &amp; Yoga Teacher</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Template scaffolding — page layout and web-scale sizing only; every color,
+   font, radius and shadow comes from ../../styles.css. */
+:root { --leading: 28px; --half: 14px; --edge: clamp(20px, 5vw, 72px); --measure: 60ch; }
+body { margin: 0; text-wrap: pretty; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 var(--edge); }
+.nav { padding-inline: max(var(--edge), calc((100% - 1100px) / 2 + var(--edge))); flex-wrap: wrap; }
+.nav a { white-space: nowrap; }
+@media (max-width: 620px) { .nav .btn { display: none; } }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
+.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em;
+  text-transform: uppercase; font-weight: 600; color: var(--color-accent-700);
+  margin: 0 0 calc(var(--leading) - var(--half)); }
 
-    a { color: inherit; text-decoration: none; }
-    a:hover { color: var(--accent); }
+/* — hero — */
+.hero { position: relative; padding: calc(3 * var(--leading)) 0 calc(2 * var(--leading)); }
+.hero::before {
+  content: ""; position: absolute; right: -160px; top: -180px;
+  width: 380px; height: 380px; border-radius: 50%;
+  background: var(--color-accent-2-200); pointer-events: none; z-index: -1;
+}
+@media (max-width: 1320px) { .hero::before { right: 0; } }
+.display {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: clamp(38px, 5.4vw, 66px);
+  line-height: clamp(41px, 5.9vw, 72px);
+  margin: 0; margin-left: -0.028em;
+}
+.display .line { display: block; }
+.hero .sub { font-size: 17px; line-height: var(--leading); max-width: var(--measure);
+  margin: calc(1.5 * var(--leading)) 0 0; opacity: 0.85; }
 
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(16px);
-      background: rgba(247, 247, 243, 0.86);
-      border-bottom: 1px solid var(--line);
-    }
+/* — two-path cards — */
+.paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--leading);
+  padding: calc(1.5 * var(--leading)) 0 calc(2.5 * var(--leading)); }
+@media (max-width: 980px) { .paths { grid-template-columns: 1fr; } }
+.path-card { display: block; text-decoration: none; color: inherit; border-radius: calc(2 * var(--radius-lg));
+  padding: calc(1.75 * var(--leading)) clamp(22px, 3vw, 40px); transition: transform 0.15s ease; }
+.path-card:hover { transform: translateY(-2px); }
+.path-card.ai { background: var(--color-accent-100); }
+.path-card.yoga { background: var(--color-accent-2-100); }
+.path-card.art { background: var(--color-neutral-200); }
+.path-card .p-kicker { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; opacity: 0.7; }
+.path-card.ai .p-kicker { color: var(--color-accent-800); }
+.path-card.yoga .p-kicker { color: var(--color-accent-2-800); }
+.path-card.art .p-kicker { color: var(--color-neutral-800); }
+.path-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 26px; margin: var(--half) 0 10px; }
+.path-card p { font-size: 15px; line-height: var(--leading); margin: 0; opacity: 0.85; max-width: 42ch; }
+.path-card .go { display: inline-flex; align-items: center; gap: 6px; margin-top: var(--leading);
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 14px; }
+.path-card.ai .go { color: var(--color-accent-700); }
+.path-card.yoga .go { color: var(--color-accent-2-700); }
+.path-card.art .go { color: var(--color-neutral-800); }
 
-    .nav-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
+/* — contact close — */
+.close { padding: 0 0 calc(2.5 * var(--leading)); }
+.close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-surface);
+  padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap;
+  gap: var(--leading); align-items: center; justify-content: space-between; }
+.close-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 25px; margin: 0 0 6px; }
+.close-card p { font-size: 14px; margin: 0; opacity: 0.75; max-width: 46ch; }
 
-    .brand { font-weight: 800; letter-spacing: -0.02em; }
-    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
-
-    main { max-width: 1120px; margin: 0 auto; padding: 72px 24px 96px; }
-    section { scroll-margin-top: 84px; }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 40px;
-      align-items: end;
-      min-height: 440px;
-      padding-bottom: 56px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      text-transform: uppercase;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(44px, 7vw, 84px);
-      line-height: 0.98;
-      letter-spacing: -0.06em;
-      margin: 0 0 20px;
-    }
-
-    .subtitle { font-size: clamp(20px, 3vw, 28px); color: #303741; margin: 0 0 24px; }
-    .tagline { font-size: 19px; color: #3f4652; max-width: 760px; margin-bottom: 30px; }
-
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      padding: 11px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      font-weight: 700;
-      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
-    }
-    .button.primary { background: var(--dark); color: white; border-color: var(--dark); }
-
-    .snapshot {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 18px 50px rgba(17, 24, 39, 0.07);
-    }
-    .snapshot h2 { margin-top: 0; }
-    .pill-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
-    .pill { background: var(--accent-soft); color: #1d4ed8; border-radius: 999px; padding: 7px 10px; font-size: 13px; font-weight: 700; }
-
-    h2 { font-size: 28px; letter-spacing: -0.03em; margin: 72px 0 18px; }
-    h3 { font-size: 21px; margin: 0 0 8px; letter-spacing: -0.02em; }
-    .section-lead { color: var(--muted); max-width: 760px; margin-bottom: 24px; }
-
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.04);
-    }
-    .meta { color: var(--muted); font-size: 14px; font-weight: 700; margin: 0 0 10px; }
-    .card p:last-child { margin-bottom: 0; }
-
-    .timeline { display: grid; gap: 14px; }
-    .timeline-item { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line); }
-    .time { color: var(--muted); font-weight: 700; font-size: 14px; }
-
-    .writing-list { display: grid; gap: 12px; }
-    .writing-item { padding: 18px 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
-
-    footer { margin-top: 80px; padding-top: 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
-
-    @media (max-width: 820px) {
-      .hero, .grid, .timeline-item { grid-template-columns: 1fr; }
-      main { padding-top: 48px; }
-      .nav-inner { align-items: flex-start; flex-direction: column; }
-    }
-  </style>
+footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-size: 13px; opacity: 0.65; }
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="#top">Yeonjung Hong</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#beyond">Beyond Work</a>
-        <a href="#writing">Writing</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+<nav class="nav">
+  <span class="nav-brand">Yeonjung Hong</span>
+  <a href="index.html" aria-current="page">Home</a>
+  <a href="ai-career.html">AI</a>
+  <a href="yoga.html">Yoga</a>
+  <a href="art.html">Art</a>
+  <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
+</nav>
+<div class="wrap">
 
-  <main id="top">
-    <section class="hero">
+  <section class="hero">
+    <span class="kicker">Three sides, one person</span>
+    <h1 class="display"><span class="line">Product-minded AI operator.</span> <span class="line">Yoga teacher &amp; wellness architect.</span></h1>
+    <p class="sub">By day, I build enterprise AI systems — from research capability to real-world deployment. Alongside that, I teach yoga and lead a workplace wellness community, training toward a career where technology and wellbeing aren't separate tracks.</p>
+  </section>
+
+  <section class="paths">
+    <a class="path-card ai" href="ai-career.html">
+      <span class="p-kicker">Day job</span>
+      <h2>AI Product &amp; Program Management</h2>
+      <p>Enterprise LLM platforms, evaluation pipelines, dataset generation, and on-premise AI deployment at LG AI Research.</p>
+      <span class="go">See the work →</span>
+    </a>
+    <a class="path-card yoga" href="yoga.html">
+      <span class="p-kicker">Second discipline</span>
+      <h2>Yoga &amp; Wellness Teaching</h2>
+      <p>Certified yoga instructor leading 2-3 workplace classes a week since 2024 — recordings, photos, and where to follow along.</p>
+      <span class="go">See the practice →</span>
+    </a>
+    <a class="path-card art" href="art.html">
+      <span class="p-kicker">Third voice</span>
+      <h2>Acting, Film &amp; Books</h2>
+      <p>A short film I co-created and starred in, a running book club since 2021, and notes on what I've been watching and reading.</p>
+      <span class="go">See the notebook →</span>
+    </a>
+  </section>
+
+  <section class="close" id="contact">
+    <div class="close-card">
       <div>
-        <div class="eyebrow">AI Product · Technical Program Management</div>
-        <h1>Yeonjung Hong</h1>
-        <p class="subtitle">Building enterprise AI systems from research to real-world deployment.</p>
-        <p class="tagline">
-          I work at the intersection of product, research, infrastructure, and domain expertise — with a focus on LLM platforms, evaluation pipelines, dataset generation, and on-premise AI deployment.
-        </p>
-        <div class="actions">
-          <a class="button primary" href="#projects">View Projects</a>
-          <a class="button" href="#resume">Resume</a>
-          <a class="button" href="https://github.com/reborn-everyday">GitHub</a>
-        </div>
+        <h2>Let's talk</h2>
+        <p>Reach me on GitHub for now — more links are coming as the site fills in.</p>
       </div>
-      <aside class="snapshot">
-        <h2>Focus Areas</h2>
-        <div class="pill-wrap">
-          <span class="pill">Enterprise AI</span>
-          <span class="pill">LLM Evaluation</span>
-          <span class="pill">On-prem Deployment</span>
-          <span class="pill">AI Product Strategy</span>
-          <span class="pill">Dataset Generation</span>
-          <span class="pill">Wellness + AI</span>
-        </div>
-      </aside>
-    </section>
+      <a class="btn btn-primary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p class="section-lead">
-        I am an AI product and program manager with a background in speech science, NLP, AI data management, and enterprise AI product development. My strength is translating ambiguous research capabilities into usable systems, operating plans, and customer-facing outcomes.
-      </p>
-      <p class="section-lead">
-        Outside of work, I'm a genuinely passionate, do-a-lot-of-things person — I pick up new disciplines fast and follow through on them, from yoga instruction to filmmaking to scuba diving. More in <a href="#beyond">Beyond Work</a>.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <p class="meta">Professional Thesis</p>
-          <h3>Product-minded AI operator</h3>
-          <p>I bridge product strategy, engineering execution, client communication, and research workflows to move AI systems from prototype to deployment.</p>
-        </div>
-        <div class="card">
-          <p class="meta">Long-term Direction</p>
-          <h3>Enterprise AI + human wellbeing</h3>
-          <p>I am interested in building AI products that improve how people work, learn, evaluate information, and sustain wellbeing inside organizations.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="time">2023 — Present</div>
-          <div>
-            <h3>LG AI Research · AI Project / Product Manager</h3>
-            <p>Product and program work across enterprise AI platforms, LLM data generation, model evaluation, on-premise deployment, and government AI projects.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="time">2019 — 2023</div>
-          <div>
-            <h3>MediaZen · AI PM / Speech & NLP Engineer</h3>
-            <p>Worked across speech/NLP engineering and AI project management, building a foundation in language technology, data, and client-facing execution.</p>
-            <p>Built <strong>SpeechPro</strong>, a speech-recognition-based English pronunciation assessment system, and deployed it as a production service for a real edtech company.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="time">Academic</div>
-          <div>
-            <h3>Speech Science & English Phonetics</h3>
-            <p>Ph.D. and M.A. training in speech science and phonetics; B.A. in English Language and Literature.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <p class="section-lead">Selected work that shows my operating range: product strategy, AI platform development, evaluation design, infrastructure constraints, and community building.</p>
-      <div class="grid">
-        <article class="card">
-          <p class="meta">Enterprise AI Platform · LLM · Product</p>
-          <h3>Data Foundry</h3>
-          <p>Coordinated product and program execution for an enterprise LLM platform supporting document-based dataset generation, model training, and evaluation workflows.</p>
-        </article>
-        <article class="card">
-          <p class="meta">Government AI · On-premise · Stakeholder Management</p>
-          <h3>MFDS AI Review Platform</h3>
-          <p>Managed launch and execution of an on-premise AI project for regulatory document review, aligning product, research, engineering, infrastructure, and client stakeholders.</p>
-        </article>
-        <article class="card">
-          <p class="meta">Evaluation · Benchmarking · Domain AI</p>
-          <h3>Enterprise LLM Evaluation</h3>
-          <p>Designed and coordinated evaluation workflows for domain-specific LLMs, including benchmark evaluation, task-specific assessment, and domain expert review.</p>
-        </article>
-        <article class="card">
-          <p class="meta">Wellness · Community · Internal Product</p>
-          <h3>Workplace Yoga & Wellness Community</h3>
-          <p>Since May 2024, I've led a weekly lunchtime yoga class at work, building a wellness community through instruction, participation workflows, and lightweight product experiments.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="beyond">
-      <h2>Beyond Work</h2>
-      <p class="section-lead">I'm the kind of person who wants to do everything — yoga, acting, diving, reading — and follows through until it becomes real. A few things I'm proud of:</p>
-      <div class="grid">
-        <div class="card">
-          <p class="meta">Wellness · Instruction</p>
-          <h3>Certified Yoga Instructor</h3>
-          <p>Leading a weekly lunchtime yoga class at work since May 2024, and earned my yoga instructor certification in June 2026.</p>
-        </div>
-        <div class="card">
-          <p class="meta">Wellness · Mindfulness</p>
-          <h3>MBSR Program Graduate</h3>
-          <p>Completed Brown University's 8-week Mindfulness-Based Stress Reduction (MBSR) program in January–February 2026 — a turning point in understanding what meditation actually is.</p>
-        </div>
-        <div class="card">
-          <p class="meta">Performance · Filmmaking</p>
-          <h3>Short Film Creator & Actor</h3>
-          <p>Took up acting classes and co-created a 10-minute short film in summer 2025, starring in it as well.</p>
-        </div>
-        <div class="card">
-          <p class="meta">Diving · Adventure</p>
-          <h3>SDI Advanced Diver</h3>
-          <p>Certified SDI Advanced Open Water Diver. I love the focus and calm that diving demands.</p>
-        </div>
-        <div class="card">
-          <p class="meta">Community · Reading</p>
-          <h3>Monthly Book Club Organizer</h3>
-          <p>Running a monthly book club since 2021, bringing people together to read and talk about ideas worth discussing.</p>
-        </div>
-      </div>
-      <p class="meta" style="margin-top: 24px;">Certifications</p>
-      <div class="pill-wrap">
-        <span class="pill">Yoga Instructor Certification · 2026</span>
-        <span class="pill">MBSR (Brown University) · 2026</span>
-        <span class="pill">SDI Advanced Open Water Diver</span>
-        <span class="pill">Google Project Management Certificate</span>
-      </div>
-    </section>
-
-    <section id="writing">
-      <h2>Writing</h2>
-      <p class="section-lead">Draft topics for future essays and case studies.</p>
-      <div class="writing-list">
-        <div class="writing-item">What makes enterprise AI different from ChatGPT</div>
-        <div class="writing-item">Lessons from on-premise LLM deployment</div>
-        <div class="writing-item">How to evaluate domain-specific LLMs</div>
-        <div class="writing-item">Building wellness programs inside organizations</div>
-      </div>
-    </section>
-
-    <section id="resume">
-      <h2>Resume</h2>
-      <div class="card">
-        <p class="meta">Coming soon</p>
-        <h3>Downloadable resume and project case studies</h3>
-        <p>This section will host a polished resume, selected case studies, and links to public writing or talks.</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>Find me on <a href="https://github.com/reborn-everyday">GitHub</a>. More links will be added as the portfolio becomes publishable.</p>
-      </div>
-    </section>
-
-    <footer>© 2026 Yeonjung Hong. Built with GitHub Pages.</footer>
-  </main>
+  <footer>© 2026 Yeonjung Hong. Built with the Organic system.</footer>
+</div>
 </body>
 </html>
