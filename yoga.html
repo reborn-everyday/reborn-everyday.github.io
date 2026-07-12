@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Yoga — Yeonjung Hong</title>
+<title>Wellness — Yeonjung Hong</title>
 <link rel="stylesheet" href="styles.css">
 <style>
 :root { --leading: 28px; --half: 14px; --edge: clamp(20px, 5vw, 72px); --measure: 60ch; }
@@ -12,68 +12,36 @@ body { margin: 0; text-wrap: pretty; }
 .nav { padding-inline: max(var(--edge), calc((100% - 1100px) / 2 + var(--edge))); flex-wrap: wrap; }
 .nav a { white-space: nowrap; }
 @media (max-width: 620px) { .nav .btn { display: none; } }
-
-.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em;
-  text-transform: uppercase; font-weight: 600; color: var(--color-accent-2-700);
-  margin: 0 0 calc(var(--leading) - var(--half)); }
-
-/* — hero (sage voice — the second discipline gets the second accent) — */
+.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-2-700); margin: 0 0 calc(var(--leading) - var(--half)); }
 .hero { position: relative; padding: calc(2.5 * var(--leading)) 0 var(--leading); }
-.hero::before {
-  content: ""; position: absolute; left: -160px; top: -180px;
-  width: 340px; height: 340px; border-radius: 50%;
-  background: var(--color-accent-2-200); pointer-events: none; z-index: -1;
-}
+.hero::before { content: ""; position: absolute; left: -160px; top: -180px; width: 340px; height: 340px; border-radius: 50%; background: var(--color-accent-2-200); pointer-events: none; z-index: -1; }
 @media (max-width: 1200px) { .hero::before { display: none; } }
-.page-head h1 { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: clamp(32px, 4vw, 46px); margin: 0; margin-left: -0.028em; }
-.hero .sub { font-size: 16px; line-height: var(--leading); max-width: var(--measure);
-  margin: var(--half) 0 0; opacity: 0.85; }
+.page-head h1 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(32px, 4vw, 46px); margin: 0; margin-left: -0.028em; }
+.hero .sub { font-size: 16px; line-height: var(--leading); max-width: var(--measure); margin: var(--half) 0 0; opacity: 0.85; }
 .tags-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--leading); }
-
 .section { padding: var(--leading) 0 calc(2 * var(--leading)); }
-.section-head { margin-bottom: var(--half); }
-.section-head h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
-  font-size: 24px; margin: 0 0 6px; }
-.section-head p { font-size: 15px; margin: 0; opacity: 0.75; max-width: 58ch; }
-
-/* — video gallery (no video asset yet: a placeholder card, striped and
-   captioned, in the system's imagery-placeholder language) — */
-.video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--leading);
-  margin-top: var(--leading); }
-@media (max-width: 720px) { .video-grid { grid-template-columns: 1fr; } }
-.video-card { border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); }
-.video-frame {
-  aspect-ratio: 16 / 9; position: relative; display: flex; align-items: center; justify-content: center;
-  background: repeating-linear-gradient(135deg,
-    var(--color-accent-2-100) 0 14px, var(--color-neutral-200) 14px 28px);
-}
-.play-btn { width: 56px; height: 56px; border-radius: 50%; background: var(--color-bg);
-  box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; }
-.play-btn svg { color: var(--color-accent-2-700); margin-left: 3px; }
-.video-cap { padding: var(--space-3); font-size: 13px; font-family: ui-monospace, 'SF Mono', Menlo, monospace;
-  color: color-mix(in srgb, var(--color-text) 60%, transparent); }
-
-/* — photo gallery (real washed photography, the system's foundation) — */
-.photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3);
-  margin-top: var(--leading); }
-@media (max-width: 720px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
-.photo-grid figure { margin: 0; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 5; }
-
-/* — SNS row — */
+.section-head { margin-bottom: var(--leading); }
+.section-head h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 24px; margin: 0 0 6px; }
+.section-head p { font-size: 15px; margin: 0; opacity: 0.75; max-width: 62ch; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--leading); }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+.card .card-title { font-size: 20px; }
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--leading); }
+@media (max-width: 860px) { .principles { grid-template-columns: 1fr; } }
+.principle { padding: var(--leading); border-top: 1px solid var(--color-divider); }
+.principle h3 { font-family: var(--font-heading); font-size: 18px; margin: 0 0 8px; }
+.principle p { font-size: 14px; line-height: 1.7; margin: 0; opacity: 0.8; }
+.field-note { border-left: 3px solid var(--color-accent-2-400); padding: 4px 0 4px var(--leading); max-width: 72ch; }
+.field-note p { margin: 0; font-size: 16px; line-height: var(--leading); }
+.video-card { max-width: 680px; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); }
+.video-frame { aspect-ratio: 16 / 9; }
+.video-cap { padding: var(--space-3); font-size: 13px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
 .sns-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--leading); }
-.sns-link { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px;
-  border-radius: 999px; background: var(--color-accent-2-100); color: var(--color-accent-2-800);
-  text-decoration: none; font-size: 14px; font-weight: 600; }
+.sns-link { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--color-accent-2-100); color: var(--color-accent-2-800); text-decoration: none; font-size: 14px; font-weight: 600; }
 .sns-link:hover { background: var(--color-accent-2-200); }
-.sns-link svg { width: 18px; height: 18px; }
-
-.close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-accent-2-100);
-  padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap;
-  gap: var(--leading); align-items: center; justify-content: space-between; }
+.close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-accent-2-100); padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: var(--leading); align-items: center; justify-content: space-between; }
 .close-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 22px; margin: 0 0 6px; color: var(--color-accent-2-800); }
-.close-card p { font-size: 14px; margin: 0; opacity: 0.8; max-width: 46ch; }
-
+.close-card p { font-size: 14px; margin: 0; opacity: 0.8; max-width: 50ch; }
 footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-size: 13px; opacity: 0.65; }
 </style>
 </head>
@@ -82,103 +50,111 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
   <span class="nav-brand">Yeonjung Hong</span>
   <a href="index.html">Home</a>
   <a href="ai-career.html">AI</a>
-  <a href="yoga.html" aria-current="page">Yoga</a>
+  <a href="yoga.html" aria-current="page">Wellness</a>
   <a href="art.html">Art</a>
   <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
 </nav>
 <div class="wrap">
-
   <section class="hero page-head">
-    <span class="kicker">Yoga &amp; Wellness</span>
-    <h1>Teaching the mat, a few times a week</h1>
-    <p class="sub">I earned my yoga instructor certification in June 2026 and have led 2-3 lunchtime yoga classes at work each week since May 2024. I completed Brown University's 8-week MBSR program in early 2026 — a turning point in understanding what meditation actually is. This is the practice behind the long-term direction: becoming a wellness architect.</p>
+    <span class="kicker">Wellness Architecture</span>
+    <h1>Designing conditions for recovery and sustainable work</h1>
+    <p class="sub">I use yoga teaching, mindfulness practice, community operations, and product thinking to study how people recover, connect, and build habits that last. The goal is larger than teaching a class: it is learning how to design practical wellness into everyday systems.</p>
     <div class="tags-row">
-      <span class="tag tag-accent-2">Yoga Instructor Certification · 2026</span>
-      <span class="tag tag-accent-2">MBSR — Brown University · 2026</span>
-      <span class="tag tag-outline">SDI Advanced Open Water Diver</span>
+      <span class="tag tag-accent-2">Yoga Instructor · 2026</span>
+      <span class="tag tag-accent-2">Brown University MBSR · 2026</span>
+      <span class="tag tag-outline">Workplace Wellness · since 2024</span>
     </div>
   </section>
 
   <section class="section">
     <div class="section-head">
-      <h2>Teaching, recorded</h2>
-      <p>Clips from the lunchtime classes — drop your recordings into the frames below.</p>
+      <span class="kicker">Field Experience</span>
+      <h2>Workplace yoga as a living laboratory</h2>
+      <p>Since May 2024, I have facilitated more than 100 lunchtime workplace yoga sessions for a growing employee community. I design beginner-friendly classes, adapt to limited time and space, and learn from the realities of participation, fatigue, motivation, and group dynamics.</p>
     </div>
-    <div class="video-grid">
-      <div class="video-card">
-        <div class="video-frame" style="background:none;">
-          <iframe
-            src="https://www.youtube.com/embed/GK2P5oEc5_U"
-            title="Winning #1 at yoga competition"
-            style="width:100%;height:100%;border:0;"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <p class="video-cap">Winning #1 at yoga competition</p>
-      </div>
-      <div class="video-card">
-        <div class="video-frame"><span class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg></span></div>
-        <p class="video-cap">// drop-in: breathwork &amp; mindfulness segment</p>
-      </div>
-      <div class="video-card">
-        <div class="video-frame"><span class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg></span></div>
-        <p class="video-cap">// drop-in: certification demo reel</p>
-      </div>
-      <div class="video-card">
-        <div class="video-frame"><span class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg></span></div>
-        <p class="video-cap">// drop-in: student testimonial</p>
-      </div>
+    <div class="grid">
+      <article class="card elev-sm">
+        <span class="card-kicker">Teaching</span>
+        <h3 class="card-title">Accessible movement</h3>
+        <p class="card-body">Short, repeatable sessions designed for office workers with mixed experience, energy levels, and physical needs.</p>
+      </article>
+      <article class="card elev-sm">
+        <span class="card-kicker">Community</span>
+        <h3 class="card-title">Participation and continuity</h3>
+        <p class="card-body">Operating a recurring wellness community taught me that consistency, psychological safety, and ease of joining matter as much as program quality.</p>
+      </article>
+      <article class="card elev-sm">
+        <span class="card-kicker">Mindfulness</span>
+        <h3 class="card-title">Recovery beyond exercise</h3>
+        <p class="card-body">My MBSR training expanded the work from physical practice toward attention, stress regulation, and a more realistic understanding of rest.</p>
+      </article>
+      <article class="card elev-sm">
+        <span class="card-kicker">Product Thinking</span>
+        <h3 class="card-title">Small interventions, tested</h3>
+        <p class="card-body">I treat each program as a service: observe behavior, reduce friction, test a change, and retain what genuinely helps people return.</p>
+      </article>
     </div>
   </section>
 
   <section class="section">
     <div class="section-head">
-      <h2>Photos</h2>
-      <p>Washed into the page like the rest of the site's photography — drag your own shots onto each frame.</p>
+      <span class="kicker">Design Principles</span>
+      <h2>What I am learning to design for</h2>
     </div>
-    <div class="photo-grid">
-      <figure class="washed"><image-slot id="yoga-photo-1" shape="rect" placeholder="Drop a photo"></image-slot></figure>
-      <figure class="washed"><image-slot id="yoga-photo-2" shape="rect" placeholder="Drop a photo"></image-slot></figure>
-      <figure class="washed"><image-slot id="yoga-photo-3" shape="rect" placeholder="Drop a photo"></image-slot></figure>
-      <figure class="washed"><image-slot id="yoga-photo-4" shape="rect" placeholder="Drop a photo"></image-slot></figure>
-      <figure class="washed"><image-slot id="yoga-photo-5" shape="rect" placeholder="Drop a photo"></image-slot></figure>
-      <figure class="washed"><image-slot id="yoga-photo-6" shape="rect" placeholder="Drop a photo"></image-slot></figure>
+    <div class="principles">
+      <div class="principle"><h3>Low friction</h3><p>A wellness practice should be easy to enter, especially on a difficult day. The smallest viable intervention is often more useful than an ambitious program nobody can sustain.</p></div>
+      <div class="principle"><h3>Embodied evidence</h3><p>Surveys matter, but bodies reveal different information. Breath, hesitation, energy, and return behavior are part of the evidence.</p></div>
+      <div class="principle"><h3>Human systems</h3><p>Wellness is shaped by calendars, managers, space, culture, and social permission. Good intentions need supportive operating systems.</p></div>
     </div>
   </section>
 
   <section class="section">
     <div class="section-head">
-      <h2>Follow along</h2>
-      <p>Update these with your real handles — placeholders for now.</p>
+      <span class="kicker">Current Research Question</span>
+      <h2>How can small workplace rituals help people recover?</h2>
+    </div>
+    <div class="field-note">
+      <p>I am exploring interventions simple enough to survive real work: a short movement break, a shared ritual, a protected calendar moment, or a gentle prompt that makes recovery socially acceptable.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="kicker">Selected Practice</span>
+      <h2>Yoga teaching</h2>
+      <p>A public example of my practice. Future additions will focus on independently created workplace-friendly sessions and field notes rather than internal company materials.</p>
+    </div>
+    <div class="video-card">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/GK2P5oEc5_U" title="Yoga practice" style="width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="video-cap">Selected yoga practice</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="kicker">Follow the Practice</span>
+      <h2>Public channels</h2>
     </div>
     <div class="sns-row">
-      <a class="sns-link" href="https://instagram.com/ladyyogaga_official" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-        Instagram
-      </a>
-      <a class="sns-link" href="https://youtube.com/@lady_yogaga_official" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-        YouTube
-      </a>
-      <a class="sns-link" href="mailto:hello@example.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Email
-      </a>
+      <a class="sns-link" href="https://instagram.com/ladyyogaga_official" target="_blank" rel="noopener">Instagram</a>
+      <a class="sns-link" href="https://youtube.com/@lady_yogaga_official" target="_blank" rel="noopener">YouTube</a>
+      <a class="sns-link" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
     </div>
   </section>
 
   <section class="section">
     <div class="close-card">
       <div>
-        <h2>Come to a class</h2>
-        <p>Interested in the workplace class or a private session? Reach out through any of the links above.</p>
+        <h2>From teaching classes to designing wellness systems</h2>
+        <p>This portfolio will grow through independent teaching, field notes, workplace-wellness experiments, and product prototypes that connect human recovery with thoughtful technology.</p>
       </div>
-      <a class="btn btn-secondary" href="mailto:hello@example.com">Get in touch</a>
+      <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">View projects</a>
     </div>
   </section>
 
   <footer>© 2026 Yeonjung Hong. Built with the Organic system.</footer>
 </div>
-<script src="./image-slot.js"></script>
 </body>
 </html>
