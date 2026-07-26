@@ -12,34 +12,60 @@ body { margin: 0; text-wrap: pretty; }
 .nav { padding-inline: max(var(--edge), calc((100% - 1100px) / 2 + var(--edge))); flex-wrap: wrap; }
 .nav a { white-space: nowrap; }
 @media (max-width: 620px) { .nav .btn { display: none; } }
-.kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-2-700); margin: 0 0 calc(var(--leading) - var(--half)); }
+.kicker { display: inline-block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 16px; letter-spacing: 0.01em; color: var(--color-accent-700); margin: 0 0 calc(var(--leading) - var(--half)); padding-bottom: 3px; background-image: linear-gradient(var(--color-accent-2-300), var(--color-accent-2-300)); background-repeat: no-repeat; background-size: 100% 7px; background-position: 2px 88%; }
 .hero { position: relative; padding: calc(2.5 * var(--leading)) 0 var(--leading); }
 .hero::before { content: ""; position: absolute; left: -160px; top: -180px; width: 340px; height: 340px; border-radius: 50%; background: var(--color-accent-2-200); pointer-events: none; z-index: -1; }
-@media (max-width: 1200px) { .hero::before { display: none; } }
+.hero::after { content: ""; position: absolute; right: -120px; bottom: -140px; width: 220px; height: 220px; border-radius: 44% 56% 61% 39% / 46% 40% 60% 54%; background: var(--color-accent-200); opacity: 0.7; pointer-events: none; z-index: -1; }
+@media (max-width: 1200px) { .hero::before, .hero::after { display: none; } }
 .page-head h1 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(32px, 4vw, 46px); margin: 0; margin-left: -0.028em; }
 .hero .sub { font-size: 16px; line-height: var(--leading); max-width: var(--measure); margin: var(--half) 0 0; opacity: 0.85; }
 .tags-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--leading); }
-.section { padding: var(--leading) 0 calc(2 * var(--leading)); }
+.section { padding: var(--leading) 0 calc(2 * var(--leading)); position: relative; }
 .section-head { margin-bottom: var(--leading); }
 .section-head h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 24px; margin: 0 0 6px; }
 .section-head p { font-size: 15px; margin: 0; opacity: 0.75; max-width: 62ch; }
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--leading); }
 @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
 .card .card-title { font-size: 20px; }
+.organic-cards > * { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.organic-cards > *:nth-child(4n+1) { transform: rotate(-1.1deg); background: var(--color-accent-100); }
+.organic-cards > *:nth-child(4n+2) { transform: rotate(0.9deg); background: var(--color-accent-2-100); }
+.organic-cards > *:nth-child(4n+3) { transform: rotate(-0.6deg); background: var(--color-neutral-100); }
+.organic-cards > *:nth-child(4n+4) { transform: rotate(1.2deg); background: var(--color-surface); }
+.organic-cards > *:hover { transform: rotate(0deg) scale(1.02); box-shadow: var(--shadow-md); }
 .principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--leading); }
 @media (max-width: 860px) { .principles { grid-template-columns: 1fr; } }
-.principle { padding: var(--leading); border-top: 1px solid var(--color-divider); }
-.principle h3 { font-family: var(--font-heading); font-size: 18px; margin: 0 0 8px; }
+.principle { padding: var(--leading); border-radius: var(--radius-lg); }
+.principle:nth-child(1) { background: var(--color-accent-100); transform: rotate(-0.7deg); }
+.principle:nth-child(2) { background: var(--color-accent-2-100); transform: rotate(0.6deg); }
+.principle:nth-child(3) { background: var(--color-neutral-100); transform: rotate(-0.5deg); }
+.principle h3 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 19px; margin: 0 0 8px; }
 .principle p { font-size: 14px; line-height: 1.7; margin: 0; opacity: 0.8; }
-.field-note { border-left: 3px solid var(--color-accent-2-400); padding: 4px 0 4px var(--leading); max-width: 72ch; }
+.field-note { position: relative; padding: var(--half) calc(1.4 * var(--leading)); max-width: 72ch; }
+.field-note::before { content: "“"; position: absolute; left: -6px; top: -30px; font-family: var(--font-heading); font-size: 90px; color: var(--color-accent-300); z-index: -1; }
 .field-note p { margin: 0; font-size: 16px; line-height: var(--leading); }
-.video-card { max-width: 680px; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); }
-.video-frame { aspect-ratio: 16 / 9; }
-.video-cap { padding: var(--space-3); font-size: 13px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
+.credentials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.credential-card { padding: var(--leading); border-radius: 30px 30px 30px 8px; box-shadow: var(--shadow-sm); }
+.cred-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 11px; border-radius: 999px; background: var(--color-surface); color: var(--color-accent-2-800); margin-bottom: 12px; }
+.credential-card h3 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 19px; margin: 0 0 4px; }
+.cred-issuer { font-size: 13px; opacity: 0.7; margin: 0 0 10px; }
+.credential-card p.card-body { font-size: 13.5px; line-height: 1.6; opacity: 0.85; margin: 0; }
+.teaching-section { position: relative; }
+.teaching-section::before { content: ""; position: absolute; left: -140px; bottom: -60px; width: 260px; height: 260px; border-radius: 58% 42% 37% 63% / 55% 48% 52% 45%; background: var(--color-accent-2-100); pointer-events: none; z-index: -1; }
+@media (max-width: 1200px) { .teaching-section::before { display: none; } }
+.polaroid-row { margin-bottom: calc(1.4 * var(--leading)); align-items: start; }
+.polaroid { margin: 0; background: var(--color-neutral-100); padding: 10px 10px 16px; border-radius: 6px; box-shadow: var(--shadow-md); }
+.polaroid-a { transform: rotate(-2deg); }
+.polaroid-b { transform: rotate(1.6deg); }
+.polaroid:hover { transform: rotate(0deg) scale(1.015); transition: transform 0.2s ease; }
+.polaroid-frame { border-radius: 3px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--color-neutral-800); }
+.polaroid-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.polaroid figcaption { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 14px; text-align: center; padding-top: 10px; opacity: 0.75; }
 .sns-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--leading); }
 .sns-link { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--color-accent-2-100); color: var(--color-accent-2-800); text-decoration: none; font-size: 14px; font-weight: 600; }
 .sns-link:hover { background: var(--color-accent-2-200); }
-.close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-accent-2-100); padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: var(--leading); align-items: center; justify-content: space-between; }
+.close-card { position: relative; overflow: hidden; border-radius: calc(2 * var(--radius-lg)); background: var(--color-accent-2-100); padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: var(--leading); align-items: center; justify-content: space-between; }
+.close-card::after { content: ""; position: absolute; right: -60px; top: -70px; width: 180px; height: 180px; border-radius: 50%; background: var(--color-accent-2-200); opacity: 0.6; pointer-events: none; }
 .close-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 22px; margin: 0 0 6px; color: var(--color-accent-2-800); }
 .close-card p { font-size: 14px; margin: 0; opacity: 0.8; max-width: 50ch; }
 footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-size: 13px; opacity: 0.65; }
@@ -59,32 +85,53 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
     <span class="kicker">Wellness Architecture</span>
     <h1>Designing conditions for recovery and sustainable work</h1>
     <p class="sub">I use yoga teaching, mindfulness practice, community operations, and product thinking to study how people recover, connect, and build habits that last. The goal is larger than teaching a class: it is learning how to design practical wellness into everyday systems.</p>
-    <div class="tags-row">
-      <span class="tag tag-accent-2">Yoga Instructor · 2026</span>
-      <span class="tag tag-accent-2">Brown University MBSR · 2026</span>
-      <span class="tag tag-outline">Workplace Wellness · since 2024</span>
-    </div>
-  </section>
-
-  <section class="section">
-    <span class="kicker">Practice videos</span>
-    <div class="grid">
-      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:16/9;">
-        <iframe src="https://www.youtube.com/embed/FC94Ec1J2dY" title="Yoga teaching video 1" style="width:100%;height:100%;border:0;display:block;" allowfullscreen></iframe>
-      </div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:16/9;">
-        <iframe src="https://www.youtube.com/embed/beJmWe2Zqvg" title="Yoga teaching video 2" style="width:100%;height:100%;border:0;display:block;" allowfullscreen></iframe>
-      </div>
-    </div>
   </section>
 
   <section class="section">
     <div class="section-head">
-      <span class="kicker">Field Experience</span>
-      <h2>Workplace yoga as a living laboratory</h2>
-      <p>Since May 2024, I have facilitated more than 100 lunchtime workplace yoga sessions for a growing employee community. I design beginner-friendly classes, adapt to limited time and space, and learn from the realities of participation, fatigue, motivation, and group dynamics.</p>
+      <span class="kicker">Certificates &amp; Learning Trajectory</span>
+      <h2>Formal training behind the practice</h2>
+      <p>Each program builds on the last, moving from teaching technique toward the science of recovery, stress, and behavior change.</p>
     </div>
-    <div class="grid">
+    <div class="grid credentials-grid organic-cards">
+      <article class="credential-card">
+        <span class="cred-badge">Certification · 2026</span>
+        <h3>Yoga Instructor</h3>
+        <p class="cred-issuer">Yoga Teacher Training</p>
+        <p class="card-body">Certified to design and teach accessible, beginner-friendly sequences for groups with mixed experience and physical needs.</p>
+      </article>
+      <article class="credential-card">
+        <span class="cred-badge">Certification · 2026</span>
+        <h3>Mindfulness-Based Stress Reduction</h3>
+        <p class="cred-issuer">Brown University</p>
+        <p class="card-body">Trained in evidence-based MBSR methods, extending the practice from movement into attention, stress regulation, and rest.</p>
+      </article>
+      <article class="credential-card">
+        <span class="cred-badge">Course · Completed 2026</span>
+        <h3>Health Behavior Change: From Evidence to Action</h3>
+        <p class="cred-issuer">Yale University · Coursera</p>
+        <p class="card-body">Studied evidence-based frameworks for designing interventions that help people initiate and sustain lasting health behavior change.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section teaching-section">
+    <div class="section-head">
+      <span class="kicker">Teaching Experience</span>
+      <h2>Workplace yoga as a living laboratory</h2>
+      <p>Since May 2024, I have taught free lunchtime yoga for two years, facilitating more than 100 sessions for a growing employee community. I design beginner-friendly classes, adapt to limited time and space, and learn from the realities of participation, fatigue, motivation, and group dynamics.</p>
+    </div>
+    <div class="grid polaroid-row">
+      <figure class="polaroid polaroid-a">
+        <div class="polaroid-frame"><iframe src="https://www.youtube.com/embed/FC94Ec1J2dY" title="Yoga teaching video 1" allowfullscreen></iframe></div>
+        <figcaption>from a lunchtime session</figcaption>
+      </figure>
+      <figure class="polaroid polaroid-b">
+        <div class="polaroid-frame"><iframe src="https://www.youtube.com/embed/beJmWe2Zqvg" title="Yoga teaching video 2" allowfullscreen></iframe></div>
+        <figcaption>teaching in practice</figcaption>
+      </figure>
+    </div>
+    <div class="grid organic-cards">
       <article class="card elev-sm"><span class="card-kicker">Teaching</span><h3 class="card-title">Accessible movement</h3><p class="card-body">Short, repeatable sessions designed for office workers with mixed experience, energy levels, and physical needs.</p></article>
       <article class="card elev-sm"><span class="card-kicker">Community</span><h3 class="card-title">Participation and continuity</h3><p class="card-body">Operating a recurring wellness community taught me that consistency, psychological safety, and ease of joining matter as much as program quality.</p></article>
       <article class="card elev-sm"><span class="card-kicker">Mindfulness</span><h3 class="card-title">Recovery beyond exercise</h3><p class="card-body">My MBSR training expanded the work from physical practice toward attention, stress regulation, and a more realistic understanding of rest.</p></article>
@@ -104,11 +151,6 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
   <section class="section">
     <div class="section-head"><span class="kicker">Current Research Question</span><h2>How can small workplace rituals help people recover?</h2></div>
     <div class="field-note"><p>I am exploring interventions simple enough to survive real work: a short movement break, a shared ritual, a protected calendar moment, or a gentle prompt that makes recovery socially acceptable.</p></div>
-  </section>
-
-  <section class="section">
-    <div class="section-head"><span class="kicker">Selected Practice</span><h2>Yoga teaching</h2><p>A public example of my practice. Future additions will focus on independently created workplace-friendly sessions and field notes rather than internal company materials.</p></div>
-    <div class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/GK2P5oEc5_U" title="Yoga practice" style="width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="video-cap">Selected yoga practice</p></div>
   </section>
 
   <section class="section">
