@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
+<script>(function(){var l=localStorage.getItem('site-lang')||'ko';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;})();</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Wellness — Yeonjung Hong</title>
+<title>홍연정 — Wellness Architect</title>
 <link rel="stylesheet" href="styles.css">
 <style>
 :root { --leading: 28px; --half: 14px; --edge: clamp(20px, 5vw, 72px); --measure: 60ch; }
@@ -17,6 +18,7 @@ body { margin: 0; text-wrap: pretty; }
 .hero::before { content: ""; position: absolute; left: -160px; top: -180px; width: 340px; height: 340px; border-radius: 50%; background: var(--color-accent-2-200); pointer-events: none; z-index: -1; }
 .hero::after { content: ""; position: absolute; right: -120px; bottom: -140px; width: 220px; height: 220px; border-radius: 44% 56% 61% 39% / 46% 40% 60% 54%; background: var(--color-accent-200); opacity: 0.7; pointer-events: none; z-index: -1; }
 @media (max-width: 1200px) { .hero::before, .hero::after { display: none; } }
+.profile-pic { width: 96px; height: 96px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--color-accent-2-200); color: var(--color-accent-2-800); font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 22px; margin-bottom: var(--leading); box-shadow: var(--shadow-md); }
 .page-head h1 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(32px, 4vw, 46px); margin: 0; margin-left: -0.028em; }
 .hero .sub { font-size: 16px; line-height: var(--leading); max-width: var(--measure); margin: var(--half) 0 0; opacity: 0.85; }
 .tags-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--leading); }
@@ -33,17 +35,12 @@ body { margin: 0; text-wrap: pretty; }
 .organic-cards > *:nth-child(4n+3) { transform: rotate(-0.6deg); background: var(--color-neutral-100); }
 .organic-cards > *:nth-child(4n+4) { transform: rotate(1.2deg); background: var(--color-surface); }
 .organic-cards > *:hover { transform: rotate(0deg) scale(1.02); box-shadow: var(--shadow-md); }
-.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--leading); }
-@media (max-width: 860px) { .principles { grid-template-columns: 1fr; } }
-.principle { padding: var(--leading); border-radius: var(--radius-lg); }
-.principle:nth-child(1) { background: var(--color-accent-100); transform: rotate(-0.7deg); }
-.principle:nth-child(2) { background: var(--color-accent-2-100); transform: rotate(0.6deg); }
-.principle:nth-child(3) { background: var(--color-neutral-100); transform: rotate(-0.5deg); }
-.principle h3 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 19px; margin: 0 0 8px; }
-.principle p { font-size: 14px; line-height: 1.7; margin: 0; opacity: 0.8; }
+.summary-list { margin: 0; padding-left: 1.15em; font-size: 15px; line-height: 1.75; max-width: 68ch; }
+.summary-list li { margin-bottom: 8px; }
 .field-note { position: relative; padding: var(--half) calc(1.4 * var(--leading)); max-width: 72ch; }
 .field-note::before { content: "“"; position: absolute; left: -6px; top: -30px; font-family: var(--font-heading); font-size: 90px; color: var(--color-accent-300); z-index: -1; }
 .field-note p { margin: 0; font-size: 16px; line-height: var(--leading); }
+.field-note p + p { margin-top: var(--half); }
 .credentials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .credential-card { padding: var(--leading); border-radius: 30px 30px 30px 8px; box-shadow: var(--shadow-sm); }
 .cred-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 11px; border-radius: 999px; background: var(--color-surface); color: var(--color-accent-2-800); margin-bottom: 12px; }
@@ -53,6 +50,14 @@ body { margin: 0; text-wrap: pretty; }
 .teaching-section { position: relative; }
 .teaching-section::before { content: ""; position: absolute; left: -140px; bottom: -60px; width: 260px; height: 260px; border-radius: 58% 42% 37% 63% / 55% 48% 52% 45%; background: var(--color-accent-2-100); pointer-events: none; z-index: -1; }
 @media (max-width: 1200px) { .teaching-section::before { display: none; } }
+.teaching-meta { font-size: 14px; opacity: 0.75; margin: 0 0 var(--half); }
+.teaching-list { margin: 0; padding-left: 1.15em; font-size: 14.5px; line-height: 1.75; max-width: 62ch; }
+.edu-group { margin-bottom: calc(1.2 * var(--leading)); }
+.edu-group:last-child { margin-bottom: 0; }
+.edu-group h3 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 17px; margin: 0 0 8px; color: var(--color-accent-2-800); }
+.edu-list { margin: 0; padding-left: 1.15em; font-size: 14px; line-height: 1.75; opacity: 0.9; max-width: 72ch; }
+.edu-list li { margin-bottom: 4px; }
+.edu-list a { color: inherit; }
 .polaroid-row { margin-bottom: calc(1.4 * var(--leading)); align-items: start; }
 .polaroid { margin: 0; background: var(--color-neutral-100); padding: 10px 10px 16px; border-radius: 6px; box-shadow: var(--shadow-md); }
 .polaroid-a { transform: rotate(-2deg); }
@@ -64,8 +69,10 @@ body { margin: 0; text-wrap: pretty; }
 .sns-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--leading); }
 .sns-link { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--color-accent-2-100); color: var(--color-accent-2-800); text-decoration: none; font-size: 14px; font-weight: 600; }
 .sns-link:hover { background: var(--color-accent-2-200); }
+.tbd-note { font-size: 14px; opacity: 0.6; font-style: italic; margin: 0; }
 .close-card { position: relative; overflow: hidden; border-radius: calc(2 * var(--radius-lg)); background: var(--color-accent-2-100); padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: var(--leading); align-items: center; justify-content: space-between; }
-.close-card::after { content: ""; position: absolute; right: -60px; top: -70px; width: 180px; height: 180px; border-radius: 50%; background: var(--color-accent-2-200); opacity: 0.6; pointer-events: none; }
+.close-card::after { content: ""; position: absolute; right: -60px; top: -70px; width: 180px; height: 180px; border-radius: 50%; background: var(--color-accent-2-200); opacity: 0.6; pointer-events: none; z-index: 0; }
+.close-card > div, .close-card > a { position: relative; z-index: 1; }
 .close-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 22px; margin: 0 0 6px; color: var(--color-accent-2-800); }
 .close-card p { font-size: 14px; margin: 0; opacity: 0.8; max-width: 50ch; }
 footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-size: 13px; opacity: 0.65; }
@@ -74,97 +81,180 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
 <body>
 <nav class="nav">
   <span class="nav-brand">Yeonjung Hong</span>
-  <a href="index.html">Home</a>
+  <a href="index.html"><span class="lang-en">Home</span><span class="lang-ko">홈</span></a>
   <a href="ai-career.html">AI</a>
-  <a href="wellness.html" aria-current="page">Wellness</a>
-  <a href="art.html">Art</a>
+  <a href="wellness.html" aria-current="page"><span class="lang-en">Wellness</span><span class="lang-ko">웰니스</span></a>
+  <a href="art.html"><span class="lang-en">Art</span><span class="lang-ko">아트</span></a>
+  <button class="btn btn-secondary" type="button" data-lang-toggle><span class="lang-en">한국어</span><span class="lang-ko">English</span></button>
   <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
 </nav>
 <div class="wrap">
   <section class="hero page-head">
-    <span class="kicker">Wellness Architecture</span>
-    <h1>Designing conditions for recovery and sustainable work</h1>
-    <p class="sub">I use yoga teaching, mindfulness practice, community operations, and product thinking to study how people recover, connect, and build habits that last. The goal is larger than teaching a class: it is learning how to design practical wellness into everyday systems.</p>
+    <div class="profile-pic" aria-hidden="true">홍연정</div>
+    <span class="kicker">Wellness Architect</span>
+    <h1><span class="lang-en">Yeonjung Hong</span><span class="lang-ko">홍연정</span></h1>
+    <p class="sub lang-en">A Wellness Architect designing people's physical, mental, and social well-being.</p>
+    <p class="sub lang-ko">사람들의 Physical, Mental, Social Well-being을 설계하는 Wellness Architect</p>
   </section>
 
   <section class="section">
     <div class="section-head">
-      <span class="kicker">Certificates &amp; Learning Trajectory</span>
-      <h2>Formal training behind the practice</h2>
-      <p>Each program builds on the last, moving from teaching technique toward the science of recovery, stress, and behavior change.</p>
+      <span class="kicker"><span class="lang-en">Professional Summary</span><span class="lang-ko">프로필 요약</span></span>
+    </div>
+    <ul class="summary-list lang-en">
+      <li>Certified yoga instructor with two+ years leading corporate yoga programs</li>
+      <li>Passionate about lifestyle medicine, evidence-based health behavior change, and workplace wellness</li>
+      <li>Currently working as an AI Project Manager while designing scalable wellness experiences that combine yoga, behavioral science, and technology</li>
+    </ul>
+    <ul class="summary-list lang-ko">
+      <li>2년 이상 사내 요가 프로그램을 이끌어온 인증 요가 지도자</li>
+      <li>라이프스타일 메디슨, 근거 기반 건강 행동 변화, 워크플레이스 웰빙에 대한 관심</li>
+      <li>현재 AI Project Manager로 일하며, 요가·행동과학·기술을 결합한 확장 가능한 웰니스 경험을 함께 설계하고 있습니다</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="kicker"><span class="lang-en">Certifications</span><span class="lang-ko">자격증</span></span>
     </div>
     <div class="grid credentials-grid organic-cards">
       <article class="credential-card">
-        <span class="cred-badge">Certification · 2026</span>
-        <h3>Yoga Instructor</h3>
-        <p class="cred-issuer">Yoga Teacher Training</p>
-        <p class="card-body">Certified to design and teach accessible, beginner-friendly sequences for groups with mixed experience and physical needs.</p>
-      </article>
-      <article class="credential-card">
-        <span class="cred-badge">Certification · 2026</span>
-        <h3>Mindfulness-Based Stress Reduction</h3>
-        <p class="cred-issuer">Brown University</p>
-        <p class="card-body">Trained in evidence-based MBSR methods, extending the practice from movement into attention, stress regulation, and rest.</p>
-      </article>
-      <article class="credential-card">
-        <span class="cred-badge">Course · Completed 2026</span>
-        <h3>Health Behavior Change: From Evidence to Action</h3>
-        <p class="cred-issuer">Yale University · Coursera</p>
-        <p class="card-body">Studied evidence-based frameworks for designing interventions that help people initiate and sustain lasting health behavior change.</p>
+        <span class="cred-badge">2026.06.27</span>
+        <h3><span class="lang-en">Yoga Instructor Certification</span><span class="lang-ko">요가지도자 민간자격인증</span></h3>
+        <p class="cred-issuer">요가안(YOGAAN)</p>
       </article>
     </div>
   </section>
 
   <section class="section teaching-section">
     <div class="section-head">
-      <span class="kicker">Teaching Experience</span>
-      <h2>Workplace yoga as a living laboratory</h2>
-      <p>Since May 2024, I have taught free lunchtime yoga for two years, facilitating more than 100 sessions for a growing employee community. I design beginner-friendly classes, adapt to limited time and space, and learn from the realities of participation, fatigue, motivation, and group dynamics.</p>
+      <span class="kicker"><span class="lang-en">Teaching Experience</span><span class="lang-ko">지도 경력</span></span>
+      <h2><span class="lang-en">Corporate Yoga Instructor (Volunteer)</span><span class="lang-ko">사내 요가 지도자 (자원봉사)</span></h2>
+      <p class="teaching-meta">LG AI Research · 2024.5 – Present</p>
     </div>
-    <div class="grid polaroid-row">
-      <figure class="polaroid polaroid-a">
-        <div class="polaroid-frame"><iframe src="https://www.youtube.com/embed/FC94Ec1J2dY" title="Yoga teaching video 1" allowfullscreen></iframe></div>
-        <figcaption>from a lunchtime session</figcaption>
-      </figure>
-      <figure class="polaroid polaroid-b">
-        <div class="polaroid-frame"><iframe src="https://www.youtube.com/embed/beJmWe2Zqvg" title="Yoga teaching video 2" allowfullscreen></iframe></div>
-        <figcaption>teaching in practice</figcaption>
-      </figure>
+    <ul class="teaching-list lang-en">
+      <li>Designed and led weekly lunchtime yoga sessions</li>
+      <li>Built an internal yoga community, '요가무리' (Yoga-muri)</li>
+      <li>Delivered 200+ classes</li>
+      <li>Average attendance per class: 3+</li>
+      <li>Participants served: 40+</li>
+    </ul>
+    <ul class="teaching-list lang-ko">
+      <li>매주 점심시간 요가 세션 기획 및 진행</li>
+      <li>사내 요가 커뮤니티 '요가무리' 구축</li>
+      <li>200회 이상 수업 진행</li>
+      <li>회당 평균 참여 인원 3명 이상</li>
+      <li>누적 참여자 40명 이상</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="kicker"><span class="lang-en">Signature Programs</span><span class="lang-ko">시그니처 프로그램</span></span>
     </div>
     <div class="grid organic-cards">
-      <article class="card elev-sm"><span class="card-kicker">Teaching</span><h3 class="card-title">Accessible movement</h3><p class="card-body">Short, repeatable sessions designed for office workers with mixed experience, energy levels, and physical needs.</p></article>
-      <article class="card elev-sm"><span class="card-kicker">Community</span><h3 class="card-title">Participation and continuity</h3><p class="card-body">Operating a recurring wellness community taught me that consistency, psychological safety, and ease of joining matter as much as program quality.</p></article>
-      <article class="card elev-sm"><span class="card-kicker">Mindfulness</span><h3 class="card-title">Recovery beyond exercise</h3><p class="card-body">My MBSR training expanded the work from physical practice toward attention, stress regulation, and a more realistic understanding of rest.</p></article>
-      <article class="card elev-sm"><span class="card-kicker">Product Thinking</span><h3 class="card-title">Small interventions, tested</h3><p class="card-body">I treat each program as a service: observe behavior, reduce friction, test a change, and retain what genuinely helps people return.</p></article>
+      <article class="card elev-sm">
+        <span class="card-kicker"><span class="lang-en">30 min</span><span class="lang-ko">30분</span></span>
+        <h3 class="card-title">Office Ashtanga</h3>
+        <p class="card-body lang-en">A 30-minute Ashtanga Primary Series for lunchtime at work</p>
+        <p class="card-body lang-ko">직장인 점심시간을 위한 30분 아쉬탕가 프라이머리 시리즈</p>
+      </article>
+      <article class="card elev-sm">
+        <span class="card-kicker"><span class="lang-en">60 min</span><span class="lang-ko">60분</span></span>
+        <h3 class="card-title">Ashtanga for Beginners</h3>
+        <p class="card-body lang-en">A 60-minute Ashtanga Primary Series for beginners</p>
+        <p class="card-body lang-ko">초보자를 위한 60분 아쉬탕가 프라이머리 시리즈</p>
+      </article>
+      <article class="card elev-sm">
+        <span class="card-kicker"><span class="lang-en">60 min</span><span class="lang-ko">60분</span></span>
+        <h3 class="card-title">Recovery Yoga for Shoulder Pain</h3>
+        <p class="card-body lang-en">A 60-minute yoga class focused on shoulder and lower-back pain relief</p>
+        <p class="card-body lang-ko">어깨와 허리 통증 완화에 초점을 맞춘 60분 요가</p>
+      </article>
+      <article class="card elev-sm">
+        <span class="card-kicker"><span class="lang-en">20 min</span><span class="lang-ko">20분</span></span>
+        <h3 class="card-title">Stress Reset</h3>
+        <p class="card-body lang-en">A 20-minute breathwork and guided meditation session with aromatherapy</p>
+        <p class="card-body lang-ko">아로마 테라피와 함께하는 20분 호흡 명상 세션</p>
+      </article>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-head"><span class="kicker">Design Principles</span><h2>What I am learning to design for</h2></div>
-    <div class="principles">
-      <div class="principle"><h3>Low friction</h3><p>A wellness practice should be easy to enter, especially on a difficult day. The smallest viable intervention is often more useful than an ambitious program nobody can sustain.</p></div>
-      <div class="principle"><h3>Embodied evidence</h3><p>Surveys matter, but bodies reveal different information. Breath, hesitation, energy, and return behavior are part of the evidence.</p></div>
-      <div class="principle"><h3>Human systems</h3><p>Wellness is shaped by calendars, managers, space, culture, and social permission. Good intentions need supportive operating systems.</p></div>
+    <div class="section-head"><span class="kicker"><span class="lang-en">Teaching Philosophy</span><span class="lang-ko">지도 철학</span></span></div>
+    <div class="field-note lang-en">
+      <p>I believe yoga is for everyone, evidence-informed, and adaptable to everyday life.</p>
+      <p>My goal is not simply teaching poses, but helping people sustain healthier lifestyles.</p>
+    </div>
+    <div class="field-note lang-ko">
+      <p>저는 요가가 모든 사람을 위한 것이며, 근거에 기반하고, 일상 속에서 실천 가능해야 한다고 믿습니다.</p>
+      <p>제 목표는 단순히 동작을 가르치는 것이 아니라, 사람들이 더 건강한 라이프스타일을 지속할 수 있도록 돕는 것입니다.</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-head"><span class="kicker">Current Research Question</span><h2>How can small workplace rituals help people recover?</h2></div>
-    <div class="field-note"><p>I am exploring interventions simple enough to survive real work: a short movement break, a shared ritual, a protected calendar moment, or a gentle prompt that makes recovery socially acceptable.</p></div>
+    <div class="section-head"><span class="kicker"><span class="lang-en">Education</span><span class="lang-ko">교육 이수 과정</span></span></div>
+    <div class="edu-group">
+      <h3>Yoga</h3>
+      <ul class="edu-list">
+        <li>요가 지도자와 일반인을 위한 열린 워크샵 · 유가선원, 현천스님(요가디피카 역자) (2026.7.4, 3시간)</li>
+        <li>요가안 1기 지도자 교육과정 · 요가안(YOGAAN), 안애희 원장님 (2026.03 ~ 2026.06, 200시간) — 요가이론, 요가철학, 요가해부학, 시퀀스구성, 아쉬탕가/힐링/하타 수업교습법, 핸즈온, 오픈클래스 2회</li>
+        <li>힐링 요가 워크샵 '몸과 마음이 편안해지는 힐링요가' · 요가안(YOGAAN), 안애희 원장님 (2025.10, 15시간)</li>
+        <li>아쉬탕가 요가 워크샵 '매일 새로운 아쉬탕가' · 요가안(YOGAAN), 안애희 원장님 (2025.7, 10시간)</li>
+        <li>하타 요가 워크샵 '통증 없는 후굴' · 요가안(YOGAAN), 안애희 원장님 (2025.6, 10시간)</li>
+      </ul>
+    </div>
+    <div class="edu-group">
+      <h3>MBSR</h3>
+      <ul class="edu-list">
+        <li>8-week Mindfulness-Based Stress Reduction, Winter 2026 · Brown University, Lynn Koerbel (2026.1 ~ 2026.3)</li>
+      </ul>
+    </div>
+    <div class="edu-group">
+      <h3>Lifestyle Medicine</h3>
+      <ul class="edu-list">
+        <li>Health Behavior Change: From Evidence to Action · Yale University, Prof. Marney White (2026.7)</li>
+      </ul>
+    </div>
   </section>
 
   <section class="section">
-    <div class="section-head"><span class="kicker">Follow the Practice</span><h2>Public channels</h2></div>
+    <div class="section-head"><span class="kicker"><span class="lang-en">Portfolio</span><span class="lang-ko">포트폴리오</span></span></div>
+    <div class="grid polaroid-row">
+      <figure class="polaroid polaroid-a">
+        <div class="polaroid-frame"><iframe src="https://www.youtube.com/embed/beJmWe2Zqvg" title="Ashtanga for Beginners" allowfullscreen></iframe></div>
+        <figcaption>Ashtanga for Beginners</figcaption>
+      </figure>
+      <figure class="polaroid polaroid-b">
+        <div class="polaroid-frame"><iframe src="https://www.youtube.com/embed/FC94Ec1J2dY" title="Recovery Yoga for Shoulder Pain" allowfullscreen></iframe></div>
+        <figcaption>Recovery Yoga for Shoulder Pain</figcaption>
+      </figure>
+    </div>
     <div class="sns-row">
-      <a class="sns-link" href="https://instagram.com/ladyyogaga_official" target="_blank" rel="noopener">Instagram</a>
-      <a class="sns-link" href="https://youtube.com/@lady_yogaga_official" target="_blank" rel="noopener">YouTube</a>
-      <a class="sns-link" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
+      <a class="sns-link" href="https://www.youtube.com/@lady_yogaga_official" target="_blank" rel="noopener">YouTube · @lady_yogaga_official</a>
+      <a class="sns-link" href="https://instagram.com/ladyyogaga_official" target="_blank" rel="noopener">Instagram · @ladyyogaga_official</a>
     </div>
   </section>
 
-  <section class="section"><div class="close-card"><div><h2>From teaching classes to designing wellness systems</h2><p>This portfolio will grow through independent teaching, field notes, workplace-wellness experiments, and product prototypes that connect human recovery with thoughtful technology.</p></div><a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">View projects</a></div></section>
+  <section class="section">
+    <div class="section-head"><span class="kicker"><span class="lang-en">Testimonials</span><span class="lang-ko">수강생 후기</span></span></div>
+    <p class="tbd-note lang-en">Coming soon</p>
+    <p class="tbd-note lang-ko">추후 업데이트 예정</p>
+  </section>
+
+  <section class="section">
+    <div class="close-card">
+      <div>
+        <h2><span class="lang-en">Class inquiries are always welcome</span><span class="lang-ko">수업 및 클래스 문의는 언제나 환영합니다</span></h2>
+        <p class="lang-en">Reach out for corporate yoga, workshops, or collaboration proposals.</p>
+        <p class="lang-ko">사내 요가, 워크숍, 또는 협업 제안이 있다면 편하게 연락 주세요.</p>
+      </div>
+      <a class="btn btn-secondary" href="https://instagram.com/ladyyogaga_official" target="_blank" rel="noopener">Instagram DM</a>
+    </div>
+  </section>
 
   <footer>© 2026 Yeonjung Hong. Built with the Organic system.</footer>
 </div>
+<script src="i18n.js" defer></script>
 </body>
 </html>

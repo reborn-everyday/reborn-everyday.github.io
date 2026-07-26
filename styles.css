@@ -254,3 +254,11 @@ textarea.input { min-height: 90px; resize: vertical; }
 .btn, .tag, .seg, .input { border-radius: 999px; }
 .input { padding-inline: 14px; }
 
+/* — language toggle: leaf-level .lang-en/.lang-ko pairs, switched via
+   html[data-lang]. Only ever set display:none on the inactive side, so the
+   visible side keeps its tag's natural default (block/list-item/inline/…)
+   instead of us having to guess and re-declare it. — */
+html[data-lang="en"] .lang-ko { display: none; }
+html[data-lang="ko"] .lang-en { display: none; }
+[data-lang-toggle] { cursor: pointer; }
+

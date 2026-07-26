@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>(function(){var l=localStorage.getItem('site-lang')||'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;})();</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yeonjung Hong — AI Product Manager &amp; Wellness Architect</title>
@@ -13,13 +14,19 @@ body { margin: 0; text-wrap: pretty; }
 .nav a { white-space: nowrap; }
 @media (max-width: 620px) { .nav .btn { display: none; } }
 .kicker { display: block; font-size: 13px; line-height: var(--half); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-700); margin: 0 0 calc(var(--leading) - var(--half)); }
+.brand-stamp { display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 14px; color: var(--color-accent-2-700); margin: 0 0 var(--half); }
 .hero { position: relative; padding: calc(3 * var(--leading)) 0 calc(2 * var(--leading)); }
 .hero::before { content: ""; position: absolute; right: -160px; top: -180px; width: 380px; height: 380px; border-radius: 50%; background: var(--color-accent-2-200); pointer-events: none; z-index: -1; }
+.hero::after { content: ""; position: absolute; left: -100px; top: 60px; width: 200px; height: 200px; border-radius: 62% 38% 41% 59% / 55% 45% 55% 45%; background: var(--color-accent-2-100); opacity: 0.8; pointer-events: none; z-index: -1; }
+@media (max-width: 1320px) { .hero::before, .hero::after { display: none; } }
 @media (max-width: 1320px) { .hero::before { right: 0; } }
 .display { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(38px, 5.4vw, 66px); line-height: clamp(41px, 5.9vw, 72px); margin: 0; margin-left: -0.028em; }
 .display .line { display: block; }
 .hero .sub { font-size: 17px; line-height: var(--leading); max-width: var(--measure); margin: calc(1.5 * var(--leading)) 0 0; opacity: 0.85; }
-.paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--leading); padding: calc(1.5 * var(--leading)) 0 calc(2.5 * var(--leading)); }
+.paths-head { padding: calc(1.5 * var(--leading)) 0 0; position: relative; }
+.paths-head::before { content: ""; position: absolute; left: -80px; top: -20px; width: 160px; height: 160px; border-radius: 48% 52% 63% 37% / 41% 55% 45% 59%; background: var(--color-accent-2-100); opacity: 0.6; pointer-events: none; z-index: -1; }
+@media (max-width: 1200px) { .paths-head::before { display: none; } }
+.paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--leading); padding: var(--half) 0 calc(2.5 * var(--leading)); position: relative; }
 @media (max-width: 980px) { .paths { grid-template-columns: 1fr; } }
 .path-card { display: block; text-decoration: none; color: inherit; border-radius: calc(2 * var(--radius-lg)); padding: calc(1.75 * var(--leading)) clamp(22px, 3vw, 40px); transition: transform 0.15s ease; }
 .path-card:hover { transform: translateY(-2px); }
@@ -36,7 +43,9 @@ body { margin: 0; text-wrap: pretty; }
 .path-card.ai .go { color: var(--color-accent-700); }
 .path-card.wellness .go { color: var(--color-accent-2-700); }
 .path-card.art .go { color: var(--color-neutral-800); }
-.close { padding: 0 0 calc(2.5 * var(--leading)); }
+.close { padding: 0 0 calc(2.5 * var(--leading)); position: relative; }
+.close::before { content: ""; position: absolute; right: -100px; bottom: -80px; width: 220px; height: 220px; border-radius: 40% 60% 55% 45% / 60% 40% 60% 40%; background: var(--color-accent-2-100); opacity: 0.6; pointer-events: none; z-index: -1; }
+@media (max-width: 1200px) { .close::before { display: none; } }
 .close-card { border-radius: calc(2 * var(--radius-lg)); background: var(--color-surface); padding: calc(1.75 * var(--leading)) clamp(24px, 4vw, 56px); display: flex; flex-wrap: wrap; gap: var(--leading); align-items: center; justify-content: space-between; }
 .close-card h2 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 25px; margin: 0 0 6px; }
 .close-card p { font-size: 14px; margin: 0; opacity: 0.75; max-width: 46ch; }
@@ -46,45 +55,58 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
 <body>
 <nav class="nav">
   <span class="nav-brand">Yeonjung Hong</span>
-  <a href="index.html" aria-current="page">Home</a>
+  <a href="index.html" aria-current="page"><span class="lang-en">Home</span><span class="lang-ko">홈</span></a>
   <a href="ai-career.html">AI</a>
-  <a href="wellness.html">Wellness</a>
-  <a href="art.html">Art</a>
+  <a href="wellness.html"><span class="lang-en">Wellness</span><span class="lang-ko">웰니스</span></a>
+  <a href="art.html"><span class="lang-en">Art</span><span class="lang-ko">아트</span></a>
+  <button class="btn btn-secondary" type="button" data-lang-toggle><span class="lang-en">한국어</span><span class="lang-ko">English</span></button>
   <a class="btn btn-secondary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
 </nav>
 <div class="wrap">
   <section class="hero">
-    <span class="kicker">AI Product Manager · Forward Deployed Engineer · Wellness Architect</span>
-    <h1 class="display"><span class="line">I'm a Wellness Architect</span> <span class="line">for how people work, recover, and live.</span></h1>
-    <p class="sub">By day, I'm an AI product manager and forward deployed engineer, shipping enterprise AI from research capability to real-world deployment. Alongside that, I design the systems people live and recover inside of — training toward a career where technology and wellbeing aren't separate tracks.</p>
+    <span class="brand-stamp">AI를 이용해 사람들의 건강한 삶을 설계하는 Wellness Architect</span>
+    <span class="kicker"><span class="lang-en">AI Product Manager · Forward Deployed Engineer · Wellness Architect</span><span class="lang-ko">AI 프로덕트 매니저 · 포워드 디플로이드 엔지니어 · 웰니스 아키텍트</span></span>
+    <h1 class="display">
+      <span class="line lang-en">I'm a Wellness Architect</span><span class="line lang-ko">저는 Wellness Architect입니다</span>
+      <span class="line lang-en">for how people work, recover, and live.</span><span class="line lang-ko">사람들이 일하고, 회복하고, 살아가는 방식을 설계합니다.</span>
+    </h1>
+    <p class="sub lang-en">By day, I'm an AI product manager and forward deployed engineer, shipping enterprise AI from research capability to real-world deployment. Alongside that, I design the systems people live and recover inside of — training toward a career where technology and wellbeing aren't separate tracks. Think of this site as a small forest with three trails — wander wherever draws you in.</p>
+    <p class="sub lang-ko">낮에는 AI 프로덕트 매니저 겸 포워드 디플로이드 엔지니어로, 리서치 역량을 실제 배포로 옮기는 일을 합니다. 동시에 사람들이 살아가고 회복하는 시스템을 설계하며, 기술과 웰빙이 서로 다른 트랙이 아닌 커리어를 만들어가고 있습니다. 이 사이트를 작은 숲이라고 생각해 주세요 — 세 갈래 길 중 마음이 끌리는 곳으로 걸어가 보세요.</p>
   </section>
 
+  <div class="paths-head">
+    <span class="kicker"><span class="lang-en">Three trails through the forest</span><span class="lang-ko">숲 속 세 갈래 길</span></span>
+  </div>
   <section class="paths">
     <a class="path-card ai" href="ai-career.html">
-      <span class="p-kicker">Product practice</span>
-      <h2>AI Product &amp; Program Management</h2>
-      <p>Enterprise LLM platforms, evaluation pipelines, dataset generation, and on-premise AI deployment.</p>
-      <span class="go">See the work →</span>
+      <span class="p-kicker"><span class="lang-en">Product practice</span><span class="lang-ko">제품 실무</span></span>
+      <h2><span class="lang-en">AI Product &amp; Program Management</span><span class="lang-ko">AI 프로덕트 &amp; 프로그램 매니지먼트</span></h2>
+      <p class="lang-en">Enterprise LLM platforms, evaluation pipelines, dataset generation, and on-premise AI deployment.</p>
+      <p class="lang-ko">엔터프라이즈 LLM 플랫폼, 평가 파이프라인, 데이터셋 생성, 온프레미스 AI 배포.</p>
+      <span class="go"><span class="lang-en">See the work →</span><span class="lang-ko">이 길 따라가기 →</span></span>
     </a>
     <a class="path-card wellness" href="wellness.html">
-      <span class="p-kicker">Field practice</span>
-      <h2>Wellness Architecture</h2>
-      <p>Yoga teaching, mindfulness, workplace wellness, and small experiments in how people recover, connect, and build sustainable habits.</p>
-      <span class="go">See the practice →</span>
+      <span class="p-kicker"><span class="lang-en">Field practice</span><span class="lang-ko">현장 실무</span></span>
+      <h2><span class="lang-en">Wellness Architecture</span><span class="lang-ko">웰니스 아키텍처</span></h2>
+      <p class="lang-en">Yoga teaching, mindfulness, workplace wellness, and small experiments in how people recover, connect, and build sustainable habits.</p>
+      <p class="lang-ko">요가 지도, 마음챙김, 워크플레이스 웰빙, 그리고 사람들이 회복하고 연결되고 지속 가능한 습관을 만드는 방법에 대한 작은 실험들.</p>
+      <span class="go"><span class="lang-en">See the practice →</span><span class="lang-ko">이 길 따라가기 →</span></span>
     </a>
     <a class="path-card art" href="art.html">
-      <span class="p-kicker">Creative practice</span>
-      <h2>Acting, Film &amp; Books</h2>
-      <p>A short film I co-created and starred in, a running book club, and notes on what I have been watching and reading.</p>
-      <span class="go">See the notebook →</span>
+      <span class="p-kicker"><span class="lang-en">Creative practice</span><span class="lang-ko">창작 실무</span></span>
+      <h2><span class="lang-en">Acting, Film &amp; Books</span><span class="lang-ko">연기, 영화 &amp; 책</span></h2>
+      <p class="lang-en">A short film I co-created and starred in, a running book club, and notes on what I have been watching and reading.</p>
+      <p class="lang-ko">공동 창작하고 출연한 단편 영화, 계속 이어가고 있는 북클럽, 그리고 보고 읽은 것들에 대한 기록.</p>
+      <span class="go"><span class="lang-en">See the notebook →</span><span class="lang-ko">이 길 따라가기 →</span></span>
     </a>
   </section>
 
   <section class="close" id="contact">
     <div class="close-card">
       <div>
-        <h2>Building a practice across disciplines</h2>
-        <p>AI is how I build systems. Yoga is how I study the body. Wellness architecture is where those practices begin to meet.</p>
+        <h2><span class="lang-en">Building a practice across disciplines</span><span class="lang-ko">여러 분야를 넘나드는 실천을 만들어갑니다</span></h2>
+        <p class="lang-en">AI is how I build systems. Yoga is how I study the body. Wellness architecture is where those practices begin to meet.</p>
+        <p class="lang-ko">AI는 제가 시스템을 만드는 방법입니다. 요가는 제가 몸을 공부하는 방법입니다. 웰니스 아키텍처는 이 두 실천이 만나는 지점입니다.</p>
       </div>
       <a class="btn btn-primary" href="https://github.com/reborn-everyday" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -92,5 +114,6 @@ footer { padding: calc(1.5 * var(--leading)) 0 calc(2 * var(--leading)); font-si
 
   <footer>© 2026 Yeonjung Hong. Built with the Organic system.</footer>
 </div>
+<script src="i18n.js" defer></script>
 </body>
 </html>
